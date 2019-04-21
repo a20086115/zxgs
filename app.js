@@ -15,7 +15,18 @@ var app = express();
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(function(req,res,next){
+  //	console.log("12345",req.cookies)
+  console.log(req.protocol)
+	if(req.protocol == 'http'){
+		// 进行重定向。
+	    res.redirect('https://www.jiejiangzs.com'+req.originalUrl);
+	}
+    next()
+  })
+
+  app.use(express.static(path.join(__dirname, 'static')));
+
 
 httpServer.listen(PORT, function() {
   console.log('HTTP Server is running on: http://www.jiejiangzs.com/');
