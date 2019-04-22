@@ -5,7 +5,7 @@ body{
 /*header头部样式*/
 header .header-container {
   width: 100%;
-  height: 90px;
+  height: 130px;
   background-color: #fff;
   -webkit-box-shadow:0 0 20px rgba(204,204,204, .5);
   -moz-box-shadow:0 0 20px rgba(204, 204, 204, .5);  
@@ -14,8 +14,32 @@ header .header-container {
   z-index: 999;
   top: 0px;
 }
+.h_top {
+  padding: 0 50px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  font-size: 18px;
+  color: #fff;
+  background: black;
+}
+.h_top i {
+  float: left;
+}
+.h_top p {
+  float: right;   
+   word-spacing: -1.5px;
+  font-family: "Microsoft Yahei";
+}
+.color_yellow {
+  color: #FF7A00;
+}
+.h_top p b {
+  padding: 0 5px;
+  color: #ff7a00;
+}
 header .header-container .nav-box {
-  width: 980px;
+  width: 95%;
   height: 90px;
   margin: 0 auto;
 }
@@ -29,7 +53,6 @@ header .header-container .nav-box .nav-left #logo_top {
   height: 80px;
   float: left;
   margin-top: 5px;
-  background: url("../img/logo.png") no-repeat center;
 }
 header .header-container .nav-box .nav-mid {
   height: 70px;
