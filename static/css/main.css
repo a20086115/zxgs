@@ -19,8 +19,8 @@ header .header-container {
   -webkit-box-shadow:0 0 20px rgba(204,204,204, .5);
   -moz-box-shadow:0 0 20px rgba(204, 204, 204, .5);  
   box-shadow:0 0 20px rgba(204, 204, 204, .5);
-  position: fixed;
-  z-index: 999;
+  /* position: fixed; */
+  /* z-index: 999; */
   top: 0px;
 }
 .h_top {

@@ -10,7 +10,6 @@ body{
 .banner{
   border-bottom: 2px #c7161e solid;
   position: relative;
-  top: 90px;
   margin-bottom: 160px;
 }
 .banner img{
