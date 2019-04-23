@@ -275,12 +275,12 @@ body{
 }
 .izl-rmenu .cart .pic {
 	display:none;
-    position: absolute;
-    left: -160px;
-    top: 65px;
-    width: 160px;
-    height: 160px;
-    background:url(../images/weixin.jpg);
+  position: absolute;
+  left: -265px;
+  top: -76px;
+  width: 260px;
+  height: 260px;
+    background:url(../images/weixin.png);
 }
 #udesk-feedback-tab {
     position: fixed;
