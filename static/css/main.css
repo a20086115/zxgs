@@ -335,21 +335,21 @@ header .header-container .nav-box .nav-mobile-menu span{
 
 /*响应式媒体查询处理*/
 @media screen  and (max-width: 1200px) {
-  .feature{
+  /* .feature{
     width: 900px !important;
-  }
+  } */
 }
 
 @media  screen  and (max-width: 970px) {
   header .header-container .nav-box #lang{
     display: none;
   }
-  .feature{
+  /* .feature{
     width: 440px !important;
   }
   .feature-content{
     margin-left: 0px !important;
-  }
+  } */
   .org-group{
     width: 100% !important;
   }
@@ -408,7 +408,7 @@ header .header-container .nav-box .nav-mobile-menu span{
   .feature{
     width: 90% !important;
   }
-  .feature-content{
+  .feature-content,.shejishi-image{
     width: 100% !important;
   }
   .org-container{

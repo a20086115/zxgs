@@ -10,35 +10,48 @@ body{
 .banner{
   border-bottom: 2px #c7161e solid;
   position: relative;
-  margin-bottom: 160px;
+  margin-bottom: 30px;
 }
 .banner img{
   width: 100%;
   margin: 0 auto;
 }
 
+.contentTitle{
+  color:#c7161e;
+  font-size: 24px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid gold;
+  margin: 10px;
+}
+
+.lh_175{
+  line-height:1.75em;
+}
+.aboutUs{
+  color: rgb(51,51,51);
+  font-family: Microsoft Yahei;
+  font-size: 14px;
+}
 /*feature特色内容模块样式*/
 .feature{ 
-  width: 900px;
+  width: 85%;
   margin: 0 auto;
 }
 .feature-content{
   position: relative;
   display: inline-block;
   float: left;
-  margin-left: 20px; 
+  padding: 2%;
+  margin:2%;
   border-radius: 10px;
-  width: 440px;
-  height: 420px;
-  margin-bottom: 50px; 
+  width: 46%;
+  height: 460px;
   background-color: #fff;
   -webkit-box-shadow:0 0 10px rgba(204,204,204, .5); 
   -moz-box-shadow:0 0 10px rgba(204, 204, 204, .5);  
   box-shadow:0 0 10px rgba(204, 204, 204, .5); 
-}
-
-.feature-content:first-child{
-  margin-left: 0px; 
 }
 
 /*图片边角翻页特效*/
@@ -54,11 +67,61 @@ body{
   -o-transition:All 0.4s ease-in-out;
 }
 
+.shejishi-image{
+  margin: 2%;
+  width: 21%;
+  float: left;
+}
 .feature-image img {
   width: 100%;
   cursor: pointer;
 }
 
+.shejishi-image  img{
+  width: 100%;
+  cursor: pointer;
+}
+
+.anli-image{
+  margin: 2%;
+  width: 21%;
+  float: left;
+}
+.anli-image img {
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+}
+.fl{
+  float: left;
+}
+
+.goLeft{
+  position: absolute;
+  left: 10px;
+  top: 30%;
+  padding: 20px 0;
+  font-size: 40px;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.goLeft:hover{
+  opacity: 0.6;
+  background: gainsboro;
+}
+.goRight:hover{
+  opacity: 0.6;
+  background: gainsboro;
+}
+.goRight{
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  padding: 20px 0;
+  font-size: 40px;
+  opacity: 0.2;
+  cursor: pointer;
+}
 /*折角特效*/
 .feature-image:before {
   content: '';
@@ -154,7 +217,7 @@ body{
     padding-top: 10px;
 }
 
-.feature-content .feature-more{
+.feature-more{
   text-decoration: none;
   cursor: pointer;
   float: right;
