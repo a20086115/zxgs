@@ -459,3 +459,8 @@ template {
 [hidden] {
   display: none;
 }
+a:hover, a:focus {
+  color: #2a6496;
+  text-decoration: none;
+  cursor: pointer;
+}
