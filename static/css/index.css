@@ -39,6 +39,7 @@ body{
 .feature{ 
   width: 85%;
   margin: 0 auto;
+  padding: 2%;
 }
 .feature-content{
   position: relative;
@@ -73,13 +74,10 @@ body{
   width: 21%;
   float: left;
 }
-.feature-image img {
-  width: 100%;
-  cursor: pointer;
-}
 
 .shejishi-image  img{
   width: 100%;
+  height: 450px;
   cursor: pointer;
 }
 
@@ -403,12 +401,13 @@ body{
   margin: 0 auto;
 }
 .org-container-wap{
-  width: 880px;
+  width: 1000px;
   margin: 0 auto;
 }
 .org-container-wap img{
-  width: 140px;
-  margin: 2px;
+  width: 150px;
+  height: 80px;
+  margin: 4px;
   box-shadow: 0 0 5px rgba(204, 204, 204, .2);
 }
 .org-group .carousel-indicators li{
@@ -562,4 +561,37 @@ body{
 /* 宣传语 */
 .xuanchuan{
   text-align: center;font-family: 'Microsoft Yahei'; font-weight:bold;padding:10px;color: #ff9700;font-size:24px;
+}
+
+/* 服务流程介绍 */
+.service_left{
+  width: 46%; 
+    height: 180px;
+    overflow: hidden;
+}
+.service_right{
+  width: 46%;
+    margin-left: 56px;
+}
+.service_right .name{
+  height: 56px;
+  line-height: 56px;
+  font-size: 28px;
+  color: #3891d2;
+}
+.service_right .bri{
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #666;
+}
+.service_right .l_more{
+  width: 145px;
+  height: 38px;
+  line-height: 38px;
+  border: 1px solid #f19121;
+  font-size: 16px;
+  padding-left: 12px;
+  background: url(/images/l_more.jpg) no-repeat;
+  margin-top: 30px;
 }

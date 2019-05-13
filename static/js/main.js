@@ -73,9 +73,9 @@ $(document).ready(function(){
     })();
     // 合作机构图片加载
     (function(){
-        for (var i = 0; i < 41; i++) {
-          var imgName = "cooperation_" + (i+1) + ".png"
-          var str = '<img src="./img/org-logo-large/'+ imgName + '" alt="合作机构" class="cooperations">';
+        for (var i = 0; i < 27; i++) {
+          var imgName = "logo" + (i+1) + ".png"
+          var str = '<img src="./images/logo/'+ imgName + '" alt="合作机构" class="cooperations">';
           if(i != 24){
             $('#org2 > .org-container-wap').append(str);
           }
