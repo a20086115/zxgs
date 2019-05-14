@@ -26,15 +26,8 @@
     <!-- Favicons网站图标 -->
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <link rel="bookmark" href="img/favicon.ico" type="image/x-icon"/>
-    <script>
-      var items = [
-
-
-
-
-
-      ]
-    </script>
+    <script src="./js/demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
     <!-- 移动端导航 -->
@@ -114,79 +107,78 @@
     </div>
     <!-- section -->
     <section>
-    <div class="box clearfix">
+    <div id="app" class="box clearfix">
       <div class="box-left">
         <div class="title">
-          <h3>业务介绍</h3>
+          <h3>案例列表</h3>
         </div>
-        <ul>  
-          <li><a href="product.html">晶富投资公司办公室设计</a></li>
-          <li><a href="product-2.html">融美中心办公室设计</a></li>
-          <li><a href="product-3.html">和逸金服</a></li>
-		      <li><a href="product-4.html">和逸金融</a></li>
-        </ul>
+        <div  class="asideBox">
+            <aside>
+              <ul class="asideMenu">
+                <li v-for="(item,index) in menuList">
+                  <div class="oneMenu" @click="showToggle(item,index)">
+                    <span>{{item.text}}</span>
+                  </div>
+                  <ul v-show="item.text == currentParent">
+                    <li v-for="subItem in item.children">
+                      <div class="oneMenuChild" @click="clickChild(subItem)">{{subItem}}</div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </aside>
+          </div>
       </div>
       <div class="box-right">
         <div class="box-right-top">
           <ul>
             <li>当前位置&nbsp>></li>
-            <li>工程案例&nbsp>></li>
-            <li>晶富投资公司办公室设计</li>
+            <li>工程案例&nbsp>> </li>
+            <li>{{currentParent}}</li>
+            <li><span v-if="currentChild">&nbsp>> </span>{{currentChild}}</li>
+            <li><span v-if="currentItem.title">&nbsp>> </span>{{currentItem.title}}</li>
           </ul>
         </div>
-        <div class="box-right-mid">
+        <div class="box-right-mid" v-if="currentItem.title">
             <!-- 第一段 -->
-          <img style="margin:0 auto;width:100%;height:auto" src="./images/item1_1.png" alt="晶富投资公司办公室设计">
-          <ul>
-            <li style="margin: 10px 10px 10px 0;font-size:18px;font-weight:bold;">
-                晶富投资公司办公室设计装修－杰匠装饰
-                董事长办公室的设计方案，大气磅礴，气势恢宏，高端富丽，符合投资公司对这些要求的考究。在客户的几经改动下66666666666666666666666666的完成了设计施工方案。对材料和工艺的高标准要求，检阅了杰匠的设计装修水平。
-                咨询热线：0771-3925356
-            </li>
-          </ul>
-  
-
-          <!-- 第一段 -->
-          <img style="margin:0 auto;width:100%;height:auto" src="./images/item1_2.png" alt="晶富投资公司办公室设计">
-      
-          <ul>
-            <li style="margin: 10px 10px 10px 0;font-size:18px;font-weight:bold;">
-                副总裁办公室装修按照董事长要求，设计构思要求和董事长大致相同，这也体现家族规模公司的强大，通透的落地飘窗和素色窗帘搭配，协调优雅。
-            </li>
-          </ul>
-          <!-- 第一段 -->
-          <img style="margin:0 auto;width:100%;height:auto" src="./images/item1_3.png" alt="晶富投资公司办公室设计">
-          
-          <ul>
-            <li style="margin: 10px 10px 10px 0;font-size:18px;font-weight:bold;">
-                公司高层会议室装修，整体协调高端，配色于暖色，墙面山水画浓墨重彩，感官视觉呈现很好。
-            </li>
-          </ul>
-
-       
-          <ul>
-            <li style="margin: 10px 10px 10px 0;font-size:18px;font-weight:bold;">
-                广西杰匠装饰，以诚信为宗旨，巧妙的设计构思，精良的施工工艺，优质的质保服务。坚持以客户为中心，为客户提供满意的装修服务。了解更多有关办公室装修，商业空间装修，高端办公室装修，投资办公室装修，各种装修资讯可以登录广西杰匠装饰官网www.jiejiangzs.com或直接拨打热线0771-3925356我们期待您的来电。
-                主营业务：办公室装修，商场装修，餐饮店装修，会所装修，酒店宾馆装修，学校装修，幼儿园装修，厂房装修
-            </li>
-          </ul>
+          <div v-for="(item,index) in currentItem.content">
+              <img style="margin:0 auto;width:100%;height:auto" :src="'./images/' + item.img" alt="{{currentItem.title}}">
+              <div style="margin:10px;font-size:20px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{item.desc}}</div>
+          </div>
+            
+          <p style="margin: 10px;font-size:18px;font-weight:bold;">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp广西杰匠装饰，以诚信为宗旨，巧妙的设计构思，精良的施工工艺，优质的质保服务。坚持以客户为中心，为客户提供满意的装修服务。了解更多有关办公室装修，商业空间装修，高端办公室装修，投资办公室装修，各种装修资讯可以直接拨打热线0771-3925356,我们期待您的来电。
+          </p>
+          <P style="margin: 10px;font-size:18px;font-weight:bold;">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp主营业务：办公室装修，商场装修，餐饮店装修，会所装修，酒店宾馆装修，学校装修，幼儿园装修，厂房装修
+          </P>
 
           <div class="box-weixin clearfix">
-              <div class="wixin-fa">
-                <p>
-                  <b>欢迎扫码资讯</b>
-                </p>
-                <span></span>
-              </div>
-              <div class="wixin-info">
-                <p>联系人：&nbsp 吴先生 </p>
-                <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
-                <p>座机：&nbsp 0771-3925356 </p>
-                <p class="phone">电话：&nbsp +86 177 7481 9799</p>
-                <p class="phone">Q&nbspQ： &nbsp 3292757596</p>
-              </div>
+            <div class="wixin-fa">
+              <p>
+                <b>欢迎扫码资讯</b>
+              </p>
+              <span></span>
             </div>
-            
+            <div class="wixin-info">
+              <p>联系人：&nbsp 吴先生 </p>
+              <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
+              <p>座机：&nbsp 0771-3925356 </p>
+              <p class="phone">电话：&nbsp +86 177 7481 9799</p>
+              <p class="phone">Q&nbspQ： &nbsp 3292757596</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-right-mid" v-else>
+          <div v-for="(item,index) in demos" @click="clickItem(item)" style="width:30%;float:left;padding:10px;">
+              <div class="wixin-fa">
+                <img :src="'./images/' + item.content[0].img" :alt="item.title" style="width:100%;height:170px;">
+                <p style="text-align:center;margin:10px;">
+                 {{item.title}}
+                </p>
+              </div>
+          </div>
         </div>
       </div>
     </div>
@@ -232,5 +224,54 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- 脚本加载 -->
     <script src="js/main.js"></script>    
+
+    <script>
+      var app4 = new Vue({
+        el: '#app',
+        data: {
+          menuList:arrs,
+          demos:demos,
+          currentParent:"",
+          currentChild:"",
+          currentItem: null,
+
+        },
+        methods:{
+          // 点击展开折叠菜单事件
+          showToggle:function(item,ind){
+            this.currentParent = item.text
+            this.currentChild = ""
+          },
+          getUrlParam:function(name){
+            var reg=new RegExp('(^|&)'+name+'=([^&]*)(&|$)');
+            var result=window.location.search.substr(1).match(reg);
+            return result ? decodeURIComponent(result[2]):null;
+          },
+          clickChild: function(child){
+            this.currentChild = child;
+          },
+          clickItem: function(item){
+              this.currentItem = item;
+          }
+        },
+        watch: {
+          currentParent: function (n,o) {
+            this.currentItem = {};
+            this.currentChild = {};
+          },
+          currentChild: function (n,o) {
+            this.currentItem = {};
+          }
+         
+        },
+        mounted:function(){
+              console.log(this.getUrlParam("type1"))
+              console.log(this.getUrlParam("type2"))
+              this.currentParent = this.getUrlParam("type1");
+              this.currentChild = this.getUrlParam("type2");
+        },
+   
+    })
+    </script>
   </body>
 </html>
