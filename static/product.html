@@ -116,7 +116,7 @@
             <aside>
               <ul class="asideMenu">
                 <li v-for="(item,index) in menuList">
-                  <div class="oneMenu" @click="showToggle(item,index)">
+                  <div class="oneMenu" @click="clickParent(item.text,index)">
                     <span>{{item.text}}</span>
                   </div>
                   <ul v-show="item.text == currentParent">
@@ -134,9 +134,9 @@
           <ul>
             <li>当前位置&nbsp>></li>
             <li>工程案例&nbsp>> </li>
-            <li>{{currentParent}}</li>
-            <li><span v-if="currentChild">&nbsp>> </span>{{currentChild}}</li>
-            <li><span v-if="currentItem.title">&nbsp>> </span>{{currentItem.title}}</li>
+            <li @click="clickParent(currentParent)"><a>{{currentParent}}</a></li>
+            <li @click="clickChild(currentChild)"><span v-if="currentChild">&nbsp>> </span><a>{{currentChild}}</a></li>
+            <li><span v-if="currentTitle">&nbsp>> </span>{{currentTitle}}</li>
           </ul>
         </div>
         <div class="box-right-mid" v-if="currentItem.title">
@@ -233,42 +233,55 @@
           demos:demos,
           currentParent:"",
           currentChild:"",
-          currentItem: null,
+          currentTitle:"",
+          currentItem: {},
 
         },
         methods:{
-          // 点击展开折叠菜单事件
-          showToggle:function(item,ind){
-            this.currentParent = item.text
-            this.currentChild = ""
-          },
           getUrlParam:function(name){
             var reg=new RegExp('(^|&)'+name+'=([^&]*)(&|$)');
             var result=window.location.search.substr(1).match(reg);
-            return result ? decodeURIComponent(result[2]):null;
+            return result ? decodeURIComponent(result[2]):"";
+          },
+          getDemos:function(){
+            this.demos = [];
+            for(let demo of demos){
+              if(demo.type1 == this.currentParent && (demo.type2 == this.currentChild || !this.currentChild)){
+                this.demos.push(demo)
+              }
+            }
+          },
+          // 点击展开折叠菜单事件
+          clickParent:function(item,ind){
+            this.currentParent = item
+            this.currentChild = ""
+            this.currentItem = {};
+            this.getDemos();
           },
           clickChild: function(child){
             this.currentChild = child;
+            this.currentItem = {};
+            this.getDemos();
           },
           clickItem: function(item){
               this.currentItem = item;
+              this.currentParent = item.type1;
+              this.currentChild = item.type2;
+              this.currentTitle = item.title;
           }
         },
         watch: {
-          currentParent: function (n,o) {
-            this.currentItem = {};
-            this.currentChild = {};
-          },
-          currentChild: function (n,o) {
-            this.currentItem = {};
+
+          currentItem: function(n){
+            this.currentTitle = n.title;
           }
-         
         },
         mounted:function(){
-              console.log(this.getUrlParam("type1"))
-              console.log(this.getUrlParam("type2"))
               this.currentParent = this.getUrlParam("type1");
               this.currentChild = this.getUrlParam("type2");
+              if(!this.currentParent){
+                this.currentParent = this.menuList[0].text
+              }
         },
    
     })
