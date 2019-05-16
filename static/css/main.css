@@ -23,6 +23,17 @@ header .header-container {
   /* z-index: 999; */
   top: 0px;
 }
+
+/*banner样式*/
+.banner{
+  border-bottom: 2px #c7161e solid;
+  position: relative;
+  margin-bottom: 30px;
+}
+.banner img{
+  width: 100%;
+  margin: 0 auto;
+}
 .h_top {
   padding: 0 50px;
   height: 80px;

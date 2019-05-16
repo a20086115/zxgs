@@ -6,16 +6,6 @@ body{
   height: 100%;
 }
 
-/*banner样式*/
-.banner{
-  border-bottom: 2px #c7161e solid;
-  position: relative;
-  margin-bottom: 30px;
-}
-.banner img{
-  width: 100%;
-  margin: 0 auto;
-}
 /* 小标题 */
 
 .contentTitle{
@@ -467,7 +457,7 @@ body{
 
 /* 宣传语 */
 .xuanchuan{
-  text-align: center;font-family: 'Microsoft Yahei'; font-weight:bold;padding:10px;color: #ff9700;font-size:24px;
+  text-align: center;font-family: 'Microsoft Yahei'; font-weight:bold;padding:10px;color: #ff9700;font-size:30px;
 }
 
 /* 服务流程介绍 */
@@ -501,4 +491,31 @@ body{
   padding-left: 12px;
   background: url(/images/l_more.jpg) no-repeat;
   margin-top: 30px;
+}
+
+/* 合作客户动画 */
+@keyframes rowup {
+  0% {
+    transform:translate(0,0);
+    -ms-transform:translate(0,0);
+    -webkit-transform:translate(0,0);
+  }
+  100% {
+      transform:translate(-50%,0);
+      -ms-transform:translate(-50%,0);
+      -webkit-transform:translate(-50%,0);
+  }
+}
+.logoWrapperParent{
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoWrapperParent .logoWrapper{
+  -webkit-animation: 10s rowup linear infinite normal;
+  animation: 10s rowup linear infinite normal;
+  position: relative;
+  width: 200%;
 }

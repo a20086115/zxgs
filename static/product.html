@@ -117,11 +117,11 @@
               <ul class="asideMenu">
                 <li v-for="(item,index) in menuList">
                   <div class="oneMenu" @click="clickParent(item.text,index)">
-                    <span>{{item.text}}</span>
+                    <a>{{item.text}}</a>
                   </div>
                   <ul v-show="item.text == currentParent">
                     <li v-for="subItem in item.children">
-                      <div class="oneMenuChild" @click="clickChild(subItem)">{{subItem}}</div>
+                      <a class="oneMenuChild" @click="clickChild(subItem)">{{subItem}}</a>
                     </li>
                   </ul>
                 </li>
@@ -139,7 +139,7 @@
             <li><span v-if="currentTitle">&nbsp>> </span>{{currentTitle}}</li>
           </ul>
         </div>
-        <div class="box-right-mid" v-if="currentItem.title">
+        <div class="box-right-mid clearfix" v-if="currentItem.title">
             <!-- 第一段 -->
           <div v-for="(item,index) in currentItem.content">
               <img style="margin:0 auto;width:100%;height:auto" :src="'./images/' + item.img" alt="{{currentItem.title}}">
@@ -170,8 +170,8 @@
           </div>
         </div>
 
-        <div class="box-right-mid" v-else>
-          <div v-for="(item,index) in demos" @click="clickItem(item)" style="width:30%;float:left;padding:10px;">
+        <div class="box-right-mid clearfix" v-else>
+          <div v-for="(item,index) in demos"  @click="clickItem(item)" style="width:30%;float:left;padding:10px;">
               <div class="wixin-fa">
                 <img :src="'./images/' + item.content[0].img" :alt="item.title" style="width:100%;height:170px;">
                 <p style="text-align:center;margin:10px;">
@@ -279,9 +279,12 @@
         mounted:function(){
               this.currentParent = this.getUrlParam("type1");
               this.currentChild = this.getUrlParam("type2");
+              console.log(this.currentChild,this.currentParent)
               if(!this.currentParent){
                 this.currentParent = this.menuList[0].text
               }
+              
+            this.getDemos();
         },
    
     })

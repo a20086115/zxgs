@@ -38,13 +38,13 @@
         <a href="index.html">杰匠首页</a>
       </li>
       <li>
-        <a href="aboutus.html">办公室装修</a>
+        <a href="product.html?type1=办公室装修">办公室装修</a>
       </li>
       <li>
-        <a href="team.html">商业空间装修</a>
+        <a href="product.html?type1=商业空间装修">商业空间装修</a>
       </li>
       <li>
-        <a href="adviser.html">会所装修</a>
+        <a href="product.html?type1=会所装修">会所装修</a>
       </li>
       <li>
         <a href="product.html">工程案例</a>
@@ -109,13 +109,13 @@
               <a class="active" href="index.html">杰匠首页</a>
             </li>
             <li>
-              <a class="" href="aboutus.html">办公室装修</a>
+              <a class="" href="product.html?type1=办公室装修">办公室装修</a>
             </li>
             <li>
-              <a class="" href="product.html">商业空间装修</a>
+              <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
             </li>
             <li>
-              <a class="" href="culture.html">会所装修</a>
+              <a class="" href="product.html?type1=会所装修">会所装修</a>
             </li>
             <li>
               <a class="" href="product.html">工程案例</a>
@@ -563,17 +563,20 @@
 
   <!-- 合作机构专区 -->
   <div id="org2" class="org-container">
-    <h3 class="contentTitle" >- 合作机构 -</h3>
-    <div class="org-container-wap">
-      <!-- 动态插入img图片 -->
+    <div class="xuanchuan">
+      合作客户 -- 品牌力量，品质保证！
+      <br> <br>
+      他们都选择了杰匠！
     </div>
     <br>
-
-    <div class="xuanchuan">
-        合作客户 -- 品牌力量，品质保证！
-        <br> <br>
-        他们都选择了杰匠！
+    <div class="logoWrapperParent">
+      <div class="logoWrapper" style="width:400%;">
+          <img style="width:25%;height:auto;float:left;" src="./images/logo1.jpg" alt="">
+          <img style="width:25%;height:auto;float:left;" src="./images/logo2.jpg" alt="">
+          <img style="width:25%;height:auto;float:left;" src="./images/logo1.jpg" alt="">
+          <img style="width:25%;height:auto;float:left;" src="./images/logo2.jpg" alt="">
       </div>
+    </div>
   </div>
 
   <!-- 为什么选择杰匠 -->
@@ -700,35 +703,35 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- 脚本加载 -->
   <script src="js/main.js"></script>
-
+  <script src="./js/demo.js"></script>
   <script>
-    var arrs = [
-      {
-        text: "办公室装修",
-        desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
-        children: ["金融企业", "科技企业", "医疗企业", "贸易企业", "事业单位", "教育机构"]
-      },
-      {
-        text: "商铺装修",
-        desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
-        children: ["服装店", "甜品店", "奶茶店", "美容店", "咖啡店", "连锁快餐店"]
-      },
-      {
-        text: "餐饮会所装修",
-        desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
-        children: ["KTV", "酒吧", "主题餐厅", "洗浴中心", "网咖", "健身会所"]
-      },
-      {
-        text: "酒店装修",
-        desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
-        children: ["快捷酒店", "星级酒店", "度假酒店", "民宿"]
-      },
-      {
-        text: "厂房装修",
-        desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
-        children: ["工业厂房", "医药厂房", "食品厂房"]
-      }
-    ]
+    // var arrs = [
+    //   {
+    //     text: "办公室装修",
+    //     desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
+    //     children: ["金融企业", "科技企业", "医疗企业", "贸易企业", "事业单位", "教育机构"]
+    //   },
+    //   {
+    //     text: "商铺装修",
+    //     desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
+    //     children: ["服装店", "甜品店", "奶茶店", "美容店", "咖啡店", "连锁快餐店"]
+    //   },
+    //   {
+    //     text: "餐饮会所装修",
+    //     desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
+    //     children: ["KTV", "酒吧", "主题餐厅", "洗浴中心", "网咖", "健身会所"]
+    //   },
+    //   {
+    //     text: "酒店装修",
+    //     desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
+    //     children: ["快捷酒店", "星级酒店", "度假酒店", "民宿"]
+    //   },
+    //   {
+    //     text: "厂房装修",
+    //     desc: "创意办公室装修设计能更好的将整个办公空间利用起来。根据实际的项目特切合实际的规划功能区域，打造独树一帜的空间风格。既能呈现空间使用率性又能凸显重要区域的独特性，真正做到空间为人服务。南宁装修公司找杰匠装饰！",
+    //     children: ["工业厂房", "医药厂房", "食品厂房"]
+    //   }
+    // ]
 
 
     var html = ``;
@@ -736,17 +739,17 @@
       if (item.text == "办公室装修") {
         html += `
               <div class="lf" style="width:18%; padding-left:2%;float:left;height:180px;">
-                  <h3>${item.text}</h3>
+                  <h3><a style="color:black;" href="product.html?type1=${item.text}">${item.text}</a></h3>
               `
       } else {
         html += `
               <div class="lf" style="width:18%; padding-left:2%;border-left:1px solid black;float:left;height:180px;">
-                  <h3>${item.text}</h3>
+                  <h3><a style="color:black;" href="product.html?type1=${item.text}">${item.text}</a></h3>
               `
       }
 
       for (let child of item.children) {
-        html += `<a style="float:left;width:49%;padding:10px 0px;">${child}</a>`
+        html += `<a style="float:left;width:49%;padding:10px 0px;" href="product.html?type1=${item.text}&type2=${child}">${child}</a>`
       }
       html += `</div>`
     }
@@ -771,7 +774,7 @@
           <strong>${arrs[i].text}</strong>
         </div>
         <p>${arrs[i].desc}
-          <a href="/Projects/cyzsbgkjfa.html" title="查看详情" target="_blank" rel="nofollow">&gt;&gt;查看详情</a>
+          <a href="product.html?type1=${arrs[i].text}" title="查看详情" target="_blank" rel="nofollow">&gt;&gt;查看详情</a>
         </p>
         <span>
           <i>
@@ -788,7 +791,7 @@
         <p>`
       for (var j = 0; j < arrs[i].children.length; j++) {
         html += `
-          <a href="/fzxm.html" target="_blank" title="${arrs[i].children[j]}" rel="nofollow">${arrs[i].children[j]}</a>
+          <a  href="product.html?type1=${arrs[i].text}&type2=${arrs[i].children[j]}" target="_blank" title="${arrs[i].children[j]}" rel="nofollow">${arrs[i].children[j]}</a>
           `
       }
       html += `
