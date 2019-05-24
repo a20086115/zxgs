@@ -129,25 +129,25 @@ section{
 	margin-top: 40px; 
 }
 
-.box-right .box-right-top{
+.box-right-top{
 	padding-bottom: 40px;
 }
 
-.box-right .box-right-top ul{
+ .box-right-top ul{
 	list-style: none;
 	border-bottom: 2px solid #c7161e;
 	padding-left: 0px;
 	padding-bottom: 10px;
 }
 
-.box-right .box-right-top ul li{
+.box-right-top ul li{
 	display: inline-block;
 	color: #555;
 	font-size: 16px;
 	text-align: left;		
 }
 
-.box-right .box-right-mid{
+.box-right-mid{
 	width: 100%;
 	padding: 40px;
 	border-radius: 10px;
@@ -157,34 +157,34 @@ section{
     box-shadow:0 0 10px rgba(204, 204, 204, .5);
 }
 
-.box-right .box-right-mid .box-text{
+.box-right-mid .box-text{
     float: right;
     display: inline-block;
     width: 30%;
 }
 
 /*右侧文本段落样式*/
-.box-right .box-right-mid h4{
+.box-right-mid h4{
 	color: #ff9900;
 }
 
-.box-right .box-right-mid ul{
+.box-right-mid ul{
     margin: 0px 10px;
     padding: 0px 10px;
 }
 
 /*微信二维码*/
-.box-right .box-weixin p{
+.box-weixin p{
     text-align: center;
 }
 
-.box-right .box-weixin .wixin-abs{
+.box-weixin .wixin-abs{
 	display: inline-block;
 	float: left;
 	width: 300px;
 }
 
-.box-right .box-weixin .wixin-abs span{
+.box-weixin .wixin-abs span{
 	display: block;
 	width: 160px;
 	height: 160px;
@@ -194,13 +194,13 @@ section{
 	margin: 0 auto;
 }
 
-.box-right .box-weixin .wixin-fa{
+.box-weixin .wixin-fa{
 	display: inline-block;
 	float: left;
-    width: 300px;
+    width: 50%;
 }
 
-.box-right .box-weixin .wixin-fa span{
+.box-weixin .wixin-fa span{
 	display: block;
 	width: 160px;
 	height: 160px;
@@ -210,7 +210,7 @@ section{
 	margin: 0 auto;
 }
 
-.box-right .box-weixin .wixin-info{
+.box-weixin .wixin-info{
 	position: relative;
 	display: inline-block;
 	float: left;
@@ -218,7 +218,7 @@ section{
 	padding-top: 40px;
 }
 
-.box-right .box-weixin .wixin-info a{	
+.box-weixin .wixin-info a{	
 	text-decoration: none;
     display: block;
     text-align: center;
@@ -234,24 +234,24 @@ section{
     color: rgba(255,153,0,1); 
 }
 
-.box-right .box-weixin .wixin-info a:hover{
+.box-weixin .wixin-info a:hover{
     -webkit-box-shadow:0 0 20px rgba(255,153,0, .3);
 	-moz-box-shadow:0 0 20px rgba(255,153,0, .3);  
     box-shadow:0 0 20px rgba(255,153,0, .3);
 }
 
-.box-right .box-weixin .wixin-info p{
+.box-weixin .wixin-info p{
 	text-align: left;
 	padding-left: 40px;	
 }
 
-.box-right .box-right-mid .box-contact{
+.box-right-mid .box-contact{
 	display: inline-block;
 	float: left;
 	padding-right: 40px;
 }
 
-.box-right .box-right-mid .box-contact span{
+.box-right-mid .box-contact span{
 	display: block;
 	width: 160px;
 	height: 160px;
@@ -261,3 +261,31 @@ section{
 	margin: 0 auto;
 }
 
+
+.lianxi{
+	background: #333 url(../images/hz-bg.jpg) no-repeat top center;
+	color: #fff;
+	padding: 50px 0px;
+  }
+  .lianxi h3 {
+	color: #fff;
+	font-size: 24px;
+	margin: 12px 0 20px 0;
+  }
+  .lianxi p span {
+	margin-right: 10px;
+  }
+  .lianxi p span a {
+	padding: 8px 20px 5px 20px;
+	background: #333;
+	color: #fff;
+	font-size: 14px;
+	margin-left: 20px;
+  }
+
+  .bg-gray{
+	background-color: #f6f6f6;
+  }
+  .bg-blue{
+	background-color: #edf6f4;
+  }
