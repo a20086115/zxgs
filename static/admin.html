@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script>
+    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <el-radio-group v-model="labelPosition" size="small">
+            <el-radio-button label="left">案例</el-radio-button>
+            <el-radio-button label="right">新闻</el-radio-button>
+        </el-radio-group>
+        <el-link type="primary" href="https://ueditor.baidu.com/website/onlinedemo.html">编辑器</el-link>
+
+
+
+        <div style="margin: 20px;"></div>
+        <el-form :label-position="'left'" label-width="80px" :model="currentItem" v-if="labelPosition == 'left'">
+            <el-form-item label="分类1">
+                <el-select v-model="currentItem.type1" placeholder="请选择" @change="handlerSelect">
+                    <el-option v-for="item in options" :key="item.text" :label="item.text" :value="item.text">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="分类2">
+                <el-select v-model="currentItem.type2" placeholder="请选择">
+                    <el-option v-for="item in children" :key="item" :label="item" :value="item">
+                    </el-option>
+            </el-form-item>
+
+            <el-form-item label="标题">
+                <el-input v-model="currentItem.title"></el-input>
+            </el-form-item>
+
+            <el-form-item label="图片">
+                <el-input v-model="currentItem.image"></el-input>
+            </el-form-item>
+
+            <el-form-item label="内容">
+                <el-input v-model="currentItem.content"></el-input>
+            </el-form-item>
+
+            <el-button type="primary" @click="handleSave">保存</el-button>
+
+            <el-button type="primary" @click="handleExport">导出</el-button>
+        </el-form>
+
+
+        <el-table v-if="labelPosition == 'left'" :data="tableData.filter(data => !search || data.title.toLowerCase().includes(search.toLowerCase()) || data.image.toLowerCase().includes(search.toLowerCase()) || data.type1.toLowerCase().includes(search.toLowerCase()) || data.type2.toLowerCase().includes(search.toLowerCase()))"
+            style="width: 100%">
+            <el-table-column label="分类1" prop="type1" sortable>
+            </el-table-column>
+
+            <el-table-column label="分类2" prop="type2" sortable>
+            </el-table-column>
+
+            <el-table-column label="标题" prop="title" sortable>
+            </el-table-column>
+
+            <el-table-column label="图片" prop="image" sortable>
+            </el-table-column>
+
+            <el-table-column align="right">
+                <template slot="header" slot-scope="scope">
+                    <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+                </template>
+                <template slot-scope="scope">
+                    <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"> 复制
+                    </el-button>
+                    <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
+                    </el-button>
+                </template>
+            </el-table-column>
+        </el-table>
+
+
+        <!-- 新闻 -->
+        <div style="margin: 20px;"></div>
+        <el-form :label-position="'left'" label-width="80px" :model="currentNews" v-if="labelPosition == 'right'">
+
+            <el-form-item label="标题">
+                <el-input v-model="currentNews.text"></el-input>
+            </el-form-item>
+
+            <el-form-item label="简介">
+                <el-input v-model="currentNews.desc"></el-input>
+            </el-form-item>
+
+            <el-form-item label="时间">
+                <el-input v-model="currentNews.date"></el-input>
+            </el-form-item>
+
+            <el-form-item label="内容">
+                <el-input v-model="currentNews.content"></el-input>
+            </el-form-item>
+
+            <el-button type="primary" @click="handleNewsSave">保存</el-button>
+
+            <el-button type="primary" @click="handleNewsExport">导出</el-button>
+        </el-form>
+
+
+        <!-- 新闻 -->
+        <el-table v-if="labelPosition == 'right'" :data="news.filter(data => !search || data.text.toLowerCase().includes(search.toLowerCase()) || data.desc.toLowerCase().includes(search.toLowerCase()) || data.date.toLowerCase().includes(search.toLowerCase()))"
+            style="width: 100%" @row-click="handleNewsEdit(row,column)">
+            <el-table-column label="标题" prop="text" sortable></el-table-column>
+
+            <el-table-column label="简介" prop="desc" sortable></el-table-column>
+
+            <el-table-column label="日期" prop="date" sortable></el-table-column>
+
+            <el-table-column label="" prop="" sortable></el-table-column>
+
+            <el-table-column align="right">
+                <template slot="header" slot-scope="scope">
+                    <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+                </template>
+                <template slot-scope="scope1">
+                    <el-button size="mini" @click="handleNewsEdit(scope1.$index, scope1.row)">复制
+                    </el-button>
+                    <el-button size="mini" type="danger" @click="handleNewsDelete(scope1.$index, scope1.row)">删除
+                    </el-button>
+                </template>
+            </el-table-column>
+        </el-table>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    news: news,
+                    options: arrs,
+                    tableData: demos,
+                    search: '',
+                    labelPosition: 'left',
+                    currentItem: {},
+                    currentNews: {},
+                    children: []
+                }
+            },
+            methods: {
+                handleEdit(index, row) {
+                    this.currentItem = JSON.parse(JSON.stringify(row));
+                    console.log(index, row);
+                },
+                handleDelete(index, row) {
+                    this.tableData.splice(index, 1)
+                    console.log(index, row);
+                },
+                handleNewsEdit(index,row) {
+                    this.currentNews = JSON.parse(JSON.stringify(row));
+                    console.log(index, row);
+                },
+                handleNewsDelete(index, row) {
+                    this.news.splice(index, 1)
+                    console.log(index, row);
+                },
+                handlerSelect(item, i, j) {
+                    console.log(item, i, j)
+                    for (let option of this.options) {
+                        if (option.text == item) {
+                            this.children = option.children
+                        }
+                    }
+                },
+                handleSave() {
+                    this.tableData.push(this.currentItem)
+                },
+                handleExport() {
+                    downloadFile("demo.js", "var arrs = " + JSON.stringify(this.options) + ";\r\nvar demos = " + JSON.stringify(this.tableData))
+                },
+                handleNewsSave() {
+                    this.news.push(this.currentNews)
+                },
+                handleNewsExport() {
+                    downloadFile("news.js", "var news = " + JSON.stringify(this.news))
+                }
+            }
+        })
+
+    </script>
+</body>
+<script>
+    function downloadFile(fileName, content) {
+        console.log("asd")
+        var aLink = document.createElement('a');
+        var blob = new Blob([content]);
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错, 感谢 Barret Lee 的反馈
+        aLink.download = fileName;
+        aLink.href = URL.createObjectURL(blob);
+        aLink.dispatchEvent(evt);
+        aLink.click();
+    }
+        // downloadFile("a.js","var a = {a:sd}")
+</script>
+
+</html>
