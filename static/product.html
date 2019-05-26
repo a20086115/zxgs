@@ -48,7 +48,7 @@
           <a href="product.html?type1=商业空间装修">商业空间装修</a>
         </li>
         <li>
-          <a href="product.html?type1=会所装修">会所装修</a>
+          <a href="product.html?type1=餐饮会所装修  ">会所装修</a>
         </li>
         <li>
           <a href="product.html">工程案例</a>
@@ -102,11 +102,7 @@
         </div>
   
         <div class="nav-box">
-          <!-- logo -->
-          <!-- <div class="nav-left">
-              <img id="logo_top" src="./images/logo.png"></a>
-            </div> -->
-          <!-- memu选项 -->
+
           <div class="nav-mid">
   
             <ul class="navbar-nav">
@@ -120,7 +116,7 @@
                 <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
               </li>
               <li>
-                <a class="" href="product.html?type1=会所装修">会所装修</a>
+                <a class="" href="product.html?type1=餐饮会所装修  ">会所装修</a>
               </li>
               <li>
                 <a class="active" href="product.html">工程案例</a>
@@ -173,9 +169,9 @@
         <div class="box-right-top">
           <ul>
             <li>当前位置&nbsp>></li>
-            <li>工程案例&nbsp>> </li>
-            <li @click="clickParent(currentParent)">
-              <a>{{currentParent}}</a>
+            <li>工程案例</li>
+            <li v-if="this.currentParent" @click="clickParent(currentParent)">
+              &nbsp>> <a>{{currentParent}}</a>
             </li>
             <li @click="clickChild(currentChild)">
               <span v-if="currentChild">&nbsp>> </span>
@@ -185,7 +181,7 @@
               <span v-if="currentTitle">&nbsp>> </span>{{currentTitle}}</li>
           </ul>
         </div>
-        <div class="box-right-mid clearfix" v-if="currentItem.title">
+        <div class="box-right-mid clearfix demoParent" v-if="currentItem.title">
           <!-- 第一段 -->
           <div v-html="currentItem.content">
              {{currentItem.content}}
@@ -307,10 +303,12 @@
         this.currentParent = this.getUrlParam("type1");
         this.currentChild = this.getUrlParam("type2");
         console.log(this.currentChild, this.currentParent)
+        //没选父类的话，展示所有类别
         if (!this.currentParent) {
-          this.currentParent = this.menuList[0].text
+          // this.currentParent = this.menuList[0].text
+        }else{
+          this.getDemos();
         }
-        this.getDemos();
       },
 
     })

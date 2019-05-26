@@ -47,7 +47,7 @@
         <a href="product.html?type1=商业空间装修">商业空间装修</a>
       </li>
       <li>
-        <a href="product.html?type1=会所装修">会所装修</a>
+        <a href="product.html?type1=餐饮会所装修  ">会所装修</a>
       </li>
       <li>
         <a href="product.html">工程案例</a>
@@ -119,7 +119,7 @@
               <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
             </li>
             <li>
-              <a class="" href="product.html?type1=会所装修">会所装修</a>
+              <a class="" href="product.html?type1=餐饮会所装修  ">会所装修</a>
             </li>
             <li>
               <a class="" href="product.html">工程案例</a>
@@ -149,7 +149,7 @@
         <div class="box-right-top">
           <ul>
             <li>当前位置&nbsp>></li>
-            <li>资讯中心 </li>
+            <li  @click="currentItem = {}"><a>资讯中心</a> </li>
             <li v-if="currentItem.text">&nbsp>>{{currentItem.text}}</li>
           </ul>
         </div>
@@ -182,7 +182,7 @@
         </div>
         <div class="box-right-mid clearfix" v-else>
           <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" style="margin:10px;padding:10px 50px;"> 
-            <a :href="'./news.html?index=' + index" target="_blank">{{item.text}}</a>
+            <a @click="clickItem(index)">{{item.text}}</a>
             <span style="float:right">{{item.date}}</span>
             <div style="margin-top:10px;">
               {{item.desc}}
@@ -233,10 +233,9 @@
           var result = window.location.search.substr(1).match(reg);
           return result ? decodeURIComponent(result[2]) : "";
         },
-        // 点击展开折叠菜单事件
-        clickParent: function (item, ind) {
-          this.currentItem = item
-        },
+        clickItem:function(index){
+          this.currentItem = this.menuList[index]
+        }
       },
       mounted: function () {
         if (this.getUrlParam("index") !== "") {

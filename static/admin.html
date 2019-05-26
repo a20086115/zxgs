@@ -8,7 +8,10 @@
     <title>Document</title>
     <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script>
     <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js"></script>
+    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong.js"></script>
+    <!-- <script src="./js/shigong.js"></script> -->
     <!-- 引入样式 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- import Vue before Element -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -20,15 +23,32 @@
     <div id="app">
 
         <el-radio-group v-model="labelPosition" size="small">
-            <el-radio-button label="left">案例</el-radio-button>
-            <el-radio-button label="right">新闻</el-radio-button>
+            <el-radio-button label="left">工程案例</el-radio-button>
+            <el-radio-button label="right">咨询中心</el-radio-button>
+            <el-radio-button label="shigong">施工现场</el-radio-button>
+            
         </el-radio-group>
-        <el-link type="primary" href="https://ueditor.baidu.com/website/onlinedemo.html">编辑器</el-link>
+        <el-link type="primary" href="https://ueditor.baidu.com/website/umeditor.html">编辑器</el-link>
 
+        <div v-if="labelPosition == 'left'">
+            <el-input v-model="currentDirt"></el-input>
+            <div class="clearfix">
+                <img style="width:15%;height:auto;float:left;margin-left:10px;" v-for="index in 100" :src="'https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demoImages/' + currentDirt + '/图片' + index + '.jpg'" @click="clickImg(index)" onerror="this.style.display='none'" onload="this.style.display=''">
+            </div>
+        </div>
 
-
+        <div v-if="labelPosition == 'shigong'">
+            <el-input v-model="currentShigongDirt"></el-input>
+            <div class="clearfix">
+                <img style="width:15%;height:auto;float:left;margin-left:10px;" v-for="index in 100" :src="'https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong/' + currentShigongDirt + '/图片' + index + '.jpg'" @click="clickShigongImg(index)" onerror="this.style.display='none'" onload="this.style.display=''">
+            </div>
+        </div>
+  
         <div style="margin: 20px;"></div>
+
         <el-form :label-position="'left'" label-width="80px" :model="currentItem" v-if="labelPosition == 'left'">
+
+            
             <el-form-item label="分类1">
                 <el-select v-model="currentItem.type1" placeholder="请选择" @change="handlerSelect">
                     <el-option v-for="item in options" :key="item.text" :label="item.text" :value="item.text">
@@ -71,6 +91,9 @@
             </el-table-column>
 
             <el-table-column label="图片" prop="image" sortable>
+                <template slot-scope="scope">
+                    <img :src="scope.row.image" style="width:50%;height:auto" alt="">
+                </template>
             </el-table-column>
 
             <el-table-column align="right">
@@ -137,6 +160,67 @@
             </el-table-column>
         </el-table>
 
+
+        
+        <!-- 施工现场 -->
+        <div style="margin: 20px;"></div>
+        <el-form :label-position="'left'" label-width="80px" :model="currentShigong" v-if="labelPosition == 'shigong'">
+
+            <el-form-item label="标题">
+                <el-input v-model="currentShigong.text"></el-input>
+            </el-form-item>
+
+            <el-form-item label="简介">
+                <el-input v-model="currentShigong.desc"></el-input>
+            </el-form-item>
+
+            <el-form-item label="时间">
+                <el-input v-model="currentShigong.date"></el-input>
+            </el-form-item>
+
+            <el-form-item label="缩略图">
+                <el-input v-model="currentShigong.image"></el-input>
+            </el-form-item>
+    
+
+            <el-form-item label="内容">
+                <el-input v-model="currentShigong.content"></el-input>
+            </el-form-item>
+
+            <el-button type="primary" @click="handleShigongSave">保存</el-button>
+
+            <el-button type="primary" @click="handleShigongExport">导出</el-button>
+        </el-form>
+
+
+        <!-- 施工现场 -->
+        <el-table v-if="labelPosition == 'shigong'" :data="shigong.filter(data => !search || data.text.toLowerCase().includes(search.toLowerCase()) || data.desc.toLowerCase().includes(search.toLowerCase()) || data.date.toLowerCase().includes(search.toLowerCase()))"
+            style="width: 100%" @row-click="handleNewsEdit(row,column)">
+            <el-table-column label="标题" prop="text" sortable></el-table-column>
+
+            <el-table-column label="简介" prop="desc" sortable></el-table-column>
+
+            <el-table-column label="日期" prop="date" sortable></el-table-column>
+
+            <el-table-column label="缩略图" prop="" sortable>
+                    <template slot-scope="scope">
+                            <img :src="scope.row.image" style="width:50%;height:auto" alt="">
+                        </template>
+            </el-table-column>
+
+            <el-table-column align="right">
+                <template slot="header" slot-scope="scope">
+                    <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+                </template>
+                <template slot-scope="scope1">
+                    <el-button size="mini" @click="handleShigongEdit(scope1.$index, scope1.row)">复制
+                    </el-button>
+                    <el-button size="mini" type="danger" @click="handleShigongDelete(scope1.$index, scope1.row)">删除
+                    </el-button>
+                </template>
+            </el-table-column>
+        </el-table>
+
     </div>
 
     <script>
@@ -144,6 +228,7 @@
             el: '#app',
             data: function () {
                 return {
+                    shigong: shigong,
                     news: news,
                     options: arrs,
                     tableData: demos,
@@ -151,12 +236,16 @@
                     labelPosition: 'left',
                     currentItem: {},
                     currentNews: {},
-                    children: []
+                    currentShigong: {},
+                    children: [],
+                    currentDirt:"KTV",
+                    currentShigongDirt:""
                 }
             },
             methods: {
                 handleEdit(index, row) {
                     this.currentItem = JSON.parse(JSON.stringify(row));
+                    $("image").reload();
                     console.log(index, row);
                 },
                 handleDelete(index, row) {
@@ -171,6 +260,7 @@
                     this.news.splice(index, 1)
                     console.log(index, row);
                 },
+
                 handlerSelect(item, i, j) {
                     console.log(item, i, j)
                     for (let option of this.options) {
@@ -179,17 +269,44 @@
                         }
                     }
                 },
-                handleSave() {
-                    this.tableData.push(this.currentItem)
+                handleSave(){
+                    this.tableData.push(JSON.parse(JSON.stringify(this.currentItem)))
                 },
                 handleExport() {
                     downloadFile("demo.js", "var arrs = " + JSON.stringify(this.options) + ";\r\nvar demos = " + JSON.stringify(this.tableData))
                 },
                 handleNewsSave() {
-                    this.news.push(this.currentNews)
+                    this.news.push(JSON.parse(JSON.stringify(this.currentNews)))
                 },
                 handleNewsExport() {
                     downloadFile("news.js", "var news = " + JSON.stringify(this.news))
+                },
+
+                handleShigongEdit(index,row) {
+                    this.currentShigong = JSON.parse(JSON.stringify(row));
+                    console.log(index, row);
+                },
+                handleShigongDelete(index, row) {
+                    this.shigong.splice(index, 1)
+                    console.log(index, row);
+                },
+                handleShigongSave() {
+                    this.shigong.push(JSON.parse(JSON.stringify(this.currentShigong)))
+                },
+                handleShigongExport() {
+                    downloadFile("shigong.js", "var shigong = " + JSON.stringify(this.shigong))
+                },
+                clickImg(index,item) {
+                    console.log(this,item)
+                    if(copyText('https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demoImages/' + this.currentDirt + '/图片' + index + '.jpg')){
+                        alert("复制成功")
+                    }
+                },
+                clickShigongImg(index,item) {
+                    console.log(this,item)
+                    if(copyText('https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong/' + this.currentShigongDirt + '/图片' + index + '.jpg')){
+                        alert("复制成功")
+                    }
                 }
             }
         })
@@ -208,7 +325,20 @@
         aLink.dispatchEvent(evt);
         aLink.click();
     }
-        // downloadFile("a.js","var a = {a:sd}")
+    function copyText (text) {
+        var copyInput = document.createElement('INPUT')
+        copyInput.type = 'text'
+        copyInput.style.width = '1px'
+        copyInput.style.height = '1px'
+        copyInput.style.border = 0
+        copyInput.style.outline = 0
+        document.body.appendChild(copyInput)
+        copyInput.value = text
+        copyInput.select()
+        const result = document.execCommand('Copy')
+        document.body.removeChild(copyInput)
+        return result
+    }
 </script>
 
 </html>

@@ -289,3 +289,17 @@ section{
   .bg-blue{
 	background-color: #edf6f4;
   }
+  .nr_top { text-align:center; padding:60px 0 30px;}
+.nr_top b { font-size:48px; color:#000}
+.nr_top b em { color:#ff9700}
+.itemNews:hover{
+	border: 1px solid goldenrod
+}
+.itemNews{
+	box-sizing: border-box;
+	height: 150px;
+}
+.demoParent img{
+	width:100% !important;
+	height: auto !important;
+}
