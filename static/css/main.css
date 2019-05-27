@@ -208,6 +208,9 @@ width: 82px;
   display: inline;
   box-shadow: #DDD -1px 1px 4px;
 }
+.izl-rmenu .consult .phone a{
+  display: block
+}
 .izl-rmenu .consult:hover .phone{display:inline !important;}
 .izl-rmenu .cart {
   background-image: url(../images/consult_icon.gif);
