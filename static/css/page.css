@@ -297,7 +297,9 @@ section{
 }
 .itemNews{
 	box-sizing: border-box;
-	height: 150px;
+	
+	border: 1px;
+	height: 200px;
 }
 .demoParent img{
 	width:100% !important;
