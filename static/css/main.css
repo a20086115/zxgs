@@ -14,7 +14,6 @@ body{
 /*header头部样式*/
 header .header-container {
   width: 100%;
-  height: 130px;
   background-color: #fff;
   -webkit-box-shadow:0 0 20px rgba(204,204,204, .5);
   -moz-box-shadow:0 0 20px rgba(204, 204, 204, .5);  
@@ -182,7 +181,7 @@ header .header-container .nav-box .nav-mid .navbar-nav li.line-item {
   width: 82px;
   position: fixed;
   right: 2px;
-  top: 65%;
+  top: 50%;
   -webkit-box-shadow: #DDD 0px 1px 5px;
   -moz-box-shadow: #DDD 0px 1px 5px;
   box-shadow: #DDD 0px 1px 5px;
@@ -255,7 +254,7 @@ background:url(../images/weixin.png);
 #udesk-feedback-tab {
   position: fixed;
   right: 2px;
-  top: 65%;
+  top: 50%;
   margin-top: -76px;
   -webkit-box-shadow: #DDD 0px -1px 5px;
   -moz-box-shadow: #DDD 0px -1px 5px;
@@ -438,6 +437,29 @@ header .header-container .nav-box .nav-mobile-menu span{
   z-index: 1000;
   display: none;
 }
+.flex-container {
+  display: -webkit-flex;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 3px;
+  display: none;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+
+.flex-item {
+  margin: 0 1px;
+  background-color: rgb(255,151,0);  
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.flex-item a{
+  color: white;
+}
 
 /*响应式媒体查询处理*/
 @media screen  and (max-width: 1200px) {
@@ -461,14 +483,18 @@ header .header-container .nav-box .nav-mobile-menu span{
   }
 }
 @media  screen  and (max-width: 830px) {
-  header .header-container .nav-box{
-    width: 90%;
-  }    
+  header .header-container .nav-box {
+    height: 0px !important;
+  }
   header .header-container .nav-box .nav-mid{
     display: none;
   }
   header .header-container .nav-box .nav-mobile-menu{
     display: block;
+    position: fixed;
+    right: 10px;
+    top: -15px;
+    z-index: 10;
   }  
   
 }
@@ -519,5 +545,62 @@ header .header-container .nav-box .nav-mobile-menu span{
   }
   .org-container{
     display: none;
+  }
+  .jdal{
+    display: none;
+  }
+  .nr01, .nr02{
+    width: 100% !important;
+    height: auto  !important;
+  }
+  .nr01 p{
+    line-height: 30px !important;
+  }
+  .nr02 p{
+    height: 20%;
+    padding: 5% 0px !important;
+  }
+  .nr_top {
+    text-align: center;
+    padding: 30px 0 30px;
+  }
+  .nr_top b { 
+    font-size:28px !important;
+  }
+  .adaptive-circle h2{
+    margin: 0;
+    line-height: 100%;
+    font-size: 28px !important;
+  }
+  .adaptive-circle p{
+    display: none;
+  }
+  .fulcImg{
+    display: none !important;
+  }
+  .fulcImg1{
+    display: block !important;
+  }
+  .fulcImg2{
+    display: block !important;
+    transform: translateX(-50%)
+  }
+
+  .feature{
+    padding: 2% 0px !important;
+  }
+  .feature .service_left{
+    width: 100% !important;
+    height: auto!important;
+  }
+  .feature .service_right{
+    margin: 10px !important;
+    width: 100% !important;
+  }
+  .flex-container {
+    display: flex;
+  }
+  .copy{
+    margin-bottom: 55px;
   }
 }

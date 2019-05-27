@@ -39,7 +39,7 @@ body{
   margin:2%;
   border-radius: 10px;
   width: 46%;
-  height: 460px;
+  min-height: 450px;
   background-color: #fff;
   -webkit-box-shadow:0 0 10px rgba(204,204,204, .5); 
   -moz-box-shadow:0 0 10px rgba(204, 204, 204, .5);  
@@ -114,21 +114,21 @@ body{
   opacity: 0.2;
   cursor: pointer;
 }
-.nr_bg { background:url(Img/Index/nr_bg01.jpg) no-repeat center 0; padding: 0 8%;} 
+.nr_bg { padding: 0 8%;} 
 .nr_top { text-align:center; padding:60px 0 30px;}
 .nr_top b { font-size:48px; color:#000}
 .nr_top b em { color:#ff9700}
 
-.nr01 { width:50%; height:500px; background:#fff;}
-.nr01 .nr01-top { padding:35px 0 0; height:100px; border-bottom:solid 1px #eaeaea; background:url(Img/Index/nr_ico01.gif) no-repeat 543px 88px; display: block;}
-.nr01 .nr01-top strong { font-size:30px; color:#212324; padding-left:40px; font-weight:normal;}
+.nr01 { width:50%; padding:20px; height:500px; background:#fff;}
+.nr01 .nr01-top { padding:16px 0; height:100px; border-bottom:solid 1px #eaeaea;  display: block;text-align: center}
+.nr01 .nr01-top strong { font-size:30px; color:#212324; font-weight:normal;}
 .nr01 h3 a:hover { color:#ff9700;}
-.nr01 p { margin:40px 0 0 40px; width:517px; height:190px; border-bottom:solid 1px #e5e5e5; line-height:36px; font-size:14px; color:#7d7e7f}
-.nr01 p a { display:block; margin:36px 0 0; color:#ff9700}
+.nr01 p { margin:40px 0 ; width:100%;  border-bottom:solid 1px #e5e5e5; line-height:36px; font-size:14px; color:#7d7e7f}
+.nr01 p a { display:block; margin:10px 0 ; color:#ff9700}
 
-.nr01 span { display:block; margin:80px 40px 0; height:56px; line-height:56px; background:url(Img/Index/zj_xx01.gif) no-repeat 235px center;}
+.nr01 span { display:block; margin:10px 0; height:56px; line-height:56px; background:url(Img/Index/zj_xx01.gif) no-repeat 235px center;}
 .nr01 span i { display:block; float:right;}
-.nr01 span em { display:block; font-size:18px; color:#ff9700;}
+.nr01 span em { display:block; font-size:16px; color:#ff9700;}
 
 .nr_list { padding:110px 0 0 150px; clear:both;}
 .nr_list i { display:block; float:left; margin-right:50px;}
@@ -140,8 +140,8 @@ body{
 
 .pro1{  width:50%;}
 .nr02 { width:50%; height:500px; float:left; padding:0 1%;}
-.nr02 img { height:300px; }
-.nr02 p { padding:30px 0 0 40px; height:112px;}
+.nr02 img { height:60%; }
+.nr02 p {height:20%;padding: 5% 20px;}
 .nr02 p a { border:solid 1px #eaeaea; border-radius:2px; width:88px; height:34px; line-height:34px; display:block; font-size:14px; color:#212324; float:left; text-align:center;}
 .nr02 p a:hover,.nr02 p .cur  { border:solid 1px #ff9700; color:#ff9700;}
 #itemList a:hover{  color:#ff9700;}
@@ -177,7 +177,7 @@ body{
 .nr05 dl dd em { display:block; line-height:36px; font-size:14px; color:#7d7e7f; clear:both;}
 .nr05 .nr_list { width:430px; height:40px; background:#fff; padding:30px 0 0 130px; clear:both; top:433px; left:20px; z-index:99;}
 
-.nr_bg02 { background:url(Img/Index/nr_bg02.jpg) no-repeat center 0; height:359px;}
+.nr_bg02 {  height:359px;}
 .nr06 { padding:60px 0 0 40px; width:560px;}
 .nr06 span { display:block; height:38px; width:450px;}
 .nr06 span a { display:block; background:url(Img/Index/kj_ico03.gif) no-repeat right center; height:38px;}
@@ -220,12 +220,12 @@ body{
 
 .box-weixin .wixin-info a{	
 	text-decoration: none;
-    display: block;
+    display: inline-block;
     text-align: center;
     line-height: 34px;
     width: 200px;
     height: 36px;
-    margin: 20px auto;
+    margin: 5px auto;
     border-radius: 10px;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
@@ -436,11 +436,9 @@ body{
 .adaptive-circle .layout.middle:before {
   display: inline-block;
   vertical-align: middle;
-
   content: '';
   height: 100%;
   width: 0;
-  overflow: hidden;
 }
 .adaptive-circle .layout.middle div:first-child {
   display: inline-block;
@@ -457,7 +455,12 @@ body{
 
 /* 宣传语 */
 .xuanchuan{
-  text-align: center;font-family: 'Microsoft Yahei'; font-weight:bold;padding:10px;color: #ff9700;font-size:30px;
+  text-align: center;
+  font-family: 'Microsoft Yahei';
+   font-weight:bold;
+   padding:10px;
+   color: #ff9700;
+   font-size:30px;
 }
 
 /* 服务流程介绍 */
@@ -518,4 +521,7 @@ body{
   animation: 10s rowup linear infinite normal;
   position: relative;
   width: 200%;
+}
+.ov-h{
+  overflow: hidden;
 }

@@ -72,3 +72,46 @@ $(document).ready(function(){
         });
     })();
 });
+$(function(){
+    console.log($("a[href='http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes']"))
+    if(!isPc){
+        $("a[href='http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes']").attr("href","mqqwpa://im/chat?chat_type=wpa&uin=3292757596&version=1&src_type=web&web_src=oicqzone.com")
+    }
+    // $("a").click(function(){
+    //     console.log(this,this.href)
+    //     if(this.href == "http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes"){
+    //         console.log("打开手机QQ")
+    //         chatQQ()
+    //     }
+    // })
+})
+
+var isPc = true;
+function chatQQ(){  
+    alert("打开")
+    window.location.href = "mqqwpa://im/chat?chat_type=wpa&uin=741369024&version=1&src_type=web&web_src=jiejiangzs.com";  
+}
+// 判断浏览器设备
+(function(){
+    var isPC=function(){
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if(window.screen.width>=768){
+             flag = true;           
+        }
+        return flag;
+        
+    };
+    if(isPC()){
+        isPc = true;
+    }else{
+        isPc = false;
+    }
+})();

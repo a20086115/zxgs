@@ -19,7 +19,8 @@
     if(isPC()){
         
     }else{
-        window.location.href='mobile/index.html';
+        
+      
     }
 })();
 
