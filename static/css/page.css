@@ -1,58 +1,5 @@
-/*子页样式*/
-.main-wrapper{
-	background-attachment: fixed ! important;/*固定背景*/
-    background-repeat: no-repeat ! important; 
-    background-size: cover ! important;
-    background-position: center ! important;
-    overflow: hidden ! important;/*溢出隐藏消除滚动条*/
-    width: 100%;
-    height: 400px;
-}
-.main-wrapper-1{
-    background-image: url(../img/banner-1.jpg);   
-}
-
-.main-wrapper-2{
-    background-image: url(../img/banner-2.jpg);
-}
-
-.main-wrapper-3{
-    background-image: url(../img/banner-3.jpg);
-}
-
-.main-wrapper-4{
-    background-image: url(../img/banner-4.jpg);
-}
-
-.main-wrapper-5{
-    background-image: url(../img/banner-5.jpg);
-}
-
-/*子页banner*/
-.advert{
-	width: 100%;
-	height: 400px;
-	background-color: rgba(0,0,0,0.2);
-}
-
-.advert h1{
-	color: #fff;
-	position: relative;
-	top: 200px;
-	text-align: center;
-	font-size: 32px;
-}
-
-.advert h2{
-	color: #fff;
-	position: relative;
-	top: 200px;
-	text-align: center;
-	font-size: 28px;
-}
-/*子页内容*/
 section{
-	background-image: url("../img/bk.png");	
+	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/bk.png");	
 	background-repeat: repeat-y;
 	background-size: cover;
 	width: 100%;
@@ -178,22 +125,6 @@ section{
     text-align: center;
 }
 
-.box-weixin .wixin-abs{
-	display: inline-block;
-	float: left;
-	width: 300px;
-}
-
-.box-weixin .wixin-abs span{
-	display: block;
-	width: 160px;
-	height: 160px;
-	background-image: url("../img/weixin-abs.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 0 auto;
-}
-
 .box-weixin .wixin-fa{
 	display: inline-block;
 	float: left;
@@ -204,7 +135,7 @@ section{
 	display: block;
 	width: 160px;
 	height: 160px;
-	background-image: url("../images/weixin.png");
+	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0 auto;
@@ -224,19 +155,10 @@ section{
 	padding-right: 40px;
 }
 
-.box-right-mid .box-contact span{
-	display: block;
-	width: 160px;
-	height: 160px;
-	background-image: url("../img/weixin-safs.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 0 auto;
-}
 
 
 .lianxi{
-	background: #333 url(../images/hz-bg.jpg) no-repeat top center;
+	background: #333 url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/hz-bg.jpg) no-repeat top center;
 	color: #fff;
 	padding: 50px 0px;
   }

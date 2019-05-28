@@ -107,12 +107,7 @@ header .header-container .nav-box .nav-mid #lang {
   margin-top: 34px;
   cursor: pointer;
 }
-header .header-container .nav-box .nav-mid #lang a{
-  float: right;
-  width: 25px;
-  height: 29px;
-  background: url("../img/cn.png") no-repeat center;
-}
+
 header .header-container .nav-box .nav-mid .navbar-nav {
   left: 50%;
   transform: translateX(-50%);
@@ -188,7 +183,7 @@ header .header-container .nav-box .nav-mid .navbar-nav li.line-item {
   z-index:999;
 }
 .izl-rmenu .consult{    
-background-image: url(../images/consult_icon.gif);
+background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
 background-repeat: no-repeat;
 background-position: center -77px;
 display: block;
@@ -213,7 +208,7 @@ width: 82px;
 }
 .izl-rmenu .consult:hover .phone{display:inline !important;}
 .izl-rmenu .cart {
-  background-image: url(../images/consult_icon.gif);
+  background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
   background-repeat: no-repeat;
   background-position: center bottom;
   display: block;
@@ -247,7 +242,7 @@ width: 82px;
   box-shadow: #DDD 0px -1px 5px;
   z-index: 10000;
   cursor: pointer;
-  background-image: url(../images/consult_icon.gif);
+  background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
   background-repeat: no-repeat;
   background-position: center top;
   display: block;
@@ -267,7 +262,7 @@ width: 82px;
 	display: block;
 	width: 200px;
 	height: 200px;
-	background-image: url("../images/weixin.png");
+	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0 auto;
@@ -302,7 +297,7 @@ width: 82px;
 }
 
 .box-weixin .wixin-info p{
-	text-align: left;
+	text-align: center;
 }
 .ov-h{
   overflow: hidden;
@@ -335,15 +330,6 @@ footer .footer-right{
   display: inline-block;
   margin-right: 10px;
   padding-right: 10%;  
-}
-footer .globle{
-  display: inline-block;
-  margin: 0 auto;
-  width: 240px;
-  height: 150px;
-  background-image: url("../img/globle.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 footer ul{
@@ -391,7 +377,7 @@ footer ul:last-child{
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-image: url("../img/back2top.png");
+  background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/back2top.png");
   width: 40px;
   height: 40px;
   background-size: cover;
@@ -422,7 +408,7 @@ header .header-container .nav-box .nav-mobile-menu span{
   display: inline-block;
   width: 40px;
   height: 50px;
-  background: url("../img/menu2.png") no-repeat;
+  background: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/menu2.png") no-repeat;
   background-size: 100%;
   cursor: pointer;
 }
@@ -557,21 +543,6 @@ header .header-container .nav-box .nav-mobile-menu span{
   }
   .banner h1{
     font-size: 24px !important;
-  }
-  .main-wrapper-1{
-    background-image: url(../img/banner-1-m.png) ! important;
-  }
-  .main-wrapper-2{
-    background-image: url(../img/banner-2-m.png) ! important;
-  }
-  .main-wrapper-3{
-    background-image: url(../img/banner-3-m.png) ! important;
-  }
-  .main-wrapper-4{
-    background-image: url(../img/banner-4-m.png) ! important;
-  }
-  .main-wrapper-5{
-    background-image: url(../img/banner-5-m.png) ! important;
   }
   .feature{
     width: 90% !important;

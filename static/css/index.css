@@ -1,5 +1,5 @@
 body{
-  background-image: url("../img/bk.png");
+  background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/bk.png");
   background-repeat: repeat-y;
   background-size: cover;
   width: 100%;
@@ -206,15 +206,7 @@ body{
 	padding-right: 40px;
 }
 
-.box-right-mid .box-contact span{
-	display: block;
-	width: 160px;
-	height: 160px;
-	background-image: url("../img/weixin-safs.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 0 auto;
-}
+
 
 /*折角特效*/
 .feature-image:before {
@@ -236,80 +228,6 @@ body{
   border-bottom-width:80px;
 }
 
-.feature-text{
-  width: 100%;
-  height: 200px;
-  padding: 20px;
-  text-align: left;
-  background-color: #fff;
-}
-
-/*上推特效*/
-
-/*.feature-content:hover{
-  cursor: pointer;
-}*/
-
-/*.feature-content:hover .feature-image{
-  height: 160px;
-  transform:translateY(-10px);
-  -webkit-transform:translateY(-10px);
-  -moz-transform:translateY(-10px);
-  -o-transform:translateY(-10px);
-  -ms-transform:translateY(-10px);
-}*/
-
-.feature-text .feature-icon-project{
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-image: url("../img/project.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.feature-text .feature-icon-team{
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-image: url("../img/team.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.feature-text .feature-icon-dev{
-  float: left;
-  width: 50px;
-  height: 50px;
-  background-image: url("../img/develop.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.feature-text .feature-icon-job{
-  float: left;
-  width: 50px;
-  height: 50px;
-  background-image: url("../img/job.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.feature-text .feature-text-top{
-  width: 240px;
-  height: 60px;
-}
-
-.feature-text .feature-title{
-    font-size: 20px;
-    font-weight: bold;
-    float: right;
-    margin-left: 20px; 
-    line-height: 40px;
-    color: #000;
-    text-decoration: none;
-    padding-top: 10px;
-}
 
 .feature-more{
   text-decoration: none;
@@ -447,7 +365,7 @@ body{
   border: 1px solid #f19121;
   font-size: 16px;
   padding-left: 12px;
-  background: url(/images/l_more.jpg) no-repeat;
+  background: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/l_more.jpg) no-repeat;
   margin-top: 30px;
 }
 
