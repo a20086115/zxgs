@@ -257,6 +257,56 @@ width: 82px;
   z-index:999;
 }
 
+/* 微信及联系方式 */
+.box-weixin .wixin-fa{
+  display: inline-block;
+  width: 100%;
+}
+
+.box-weixin .wixin-fa span{
+	display: block;
+	width: 200px;
+	height: 200px;
+	background-image: url("../images/weixin.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+}
+
+.box-weixin .wixin-info{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.box-weixin .wixin-info a{	
+	text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 34px;
+    width: 200px;
+    height: 36px;
+    margin: 5px auto;
+    border-radius: 10px;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    border: 1px #fff solid; 
+    border-color: rgba(255,153,0,1);
+    color: rgba(255,153,0,1); 
+}
+
+.box-weixin .wixin-info a:hover{
+    -webkit-box-shadow:0 0 20px rgba(255,153,0, .3);
+	-moz-box-shadow:0 0 20px rgba(255,153,0, .3);  
+    box-shadow:0 0 20px rgba(255,153,0, .3);
+}
+
+.box-weixin .wixin-info p{
+	text-align: left;
+}
+.ov-h{
+  overflow: hidden;
+}
 
 /*footer样式*/
 footer{
@@ -493,7 +543,7 @@ header .header-container .nav-box .nav-mobile-menu span{
     width: 100% !important;
   }
   .box-right-mid{
-    padding: 20px !important;
+    padding: 10px !important;
   }
   .box{
     width: 90% !important;
@@ -542,13 +592,25 @@ header .header-container .nav-box .nav-mobile-menu span{
   .nr01 p{
     line-height: 30px !important;
   }
+  .nr01 p, .nr01 a, .nr01 span{
+    display: none !important;
+  }
+  section.sjtd{
+    display: none !important;
+  }
+
+
   .nr02 p{
     height: 20%;
     padding: 5% 0px !important;
   }
   .nr_top {
     text-align: center;
-    padding: 30px 0 30px;
+    padding: 0px !important;
+  }
+  .nr01-top{
+    padding: 0 !important; 
+    height: auto !important; 
   }
   .nr_top b { 
     font-size:28px !important;
@@ -588,5 +650,77 @@ header .header-container .nav-box .nav-mobile-menu span{
   }
   .copy{
     margin-bottom: 55px;
+  }
+  .mobile_demo{
+    text-align: center;
+  }
+  .mobile_demo_parent{
+    width:50%;float:left;
+    padding:2px !important;;
+    box-sizing:border-box;
+    color:black !important;
+  }
+  .mobile_demo_img{
+    width:100%;
+    height:100px !important;
+  }
+  .mobile_demo_span{
+    display: inline-block;
+    width: 100%;
+    padding: 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .demo_item_container{
+    width:100% !important;
+    float:left;
+    padding:10px;
+  }
+  .demo_item_container img{
+    width:100%;
+    height: auto !important;
+  }
+  .box-weixin .wixin-fa {
+    width: 100% !important;
+  }
+  .box-weixin .wixin-info {
+    position: relative;
+    display: inline-block;
+    width: 100% !important;
+  }
+  .news_container{
+    padding: 10px !important;
+    margin: 5px !important;
+  }
+  .news_container a{
+    width: 68%;
+    display: inline-block;
+  }
+  .shigong_container{
+    padding: 10px !important;
+    margin: 5px !important;
+  }
+  .shigong_container{
+    border: 1px;
+    height: 200px;
+  }
+  .shigong_container:hover{
+    border: 1px solid goldenrod;
+  }
+  .shigong_container img{
+    width:100% !important;
+    height:100%  !important;
+  }
+  .shigong_right_container{
+    width:100% !important;
+    font-size: 14px;
+  }
+  .shigong_right_container a{
+    text-align: center;
+    font-size: 14px !important;
+  }
+  .shigong_right_container span, .shigong_right_container p{
+    display: none
   }
 }

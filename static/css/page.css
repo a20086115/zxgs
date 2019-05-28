@@ -218,33 +218,6 @@ section{
 	padding-top: 40px;
 }
 
-.box-weixin .wixin-info a{	
-	text-decoration: none;
-    display: block;
-    text-align: center;
-    line-height: 34px;
-    width: 200px;
-    height: 36px;
-    margin: 20px auto;
-    border-radius: 10px;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    border: 1px #fff solid; 
-    border-color: rgba(255,153,0,1);
-    color: rgba(255,153,0,1); 
-}
-
-.box-weixin .wixin-info a:hover{
-    -webkit-box-shadow:0 0 20px rgba(255,153,0, .3);
-	-moz-box-shadow:0 0 20px rgba(255,153,0, .3);  
-    box-shadow:0 0 20px rgba(255,153,0, .3);
-}
-
-.box-weixin .wixin-info p{
-	text-align: left;
-	padding-left: 40px;	
-}
-
 .box-right-mid .box-contact{
 	display: inline-block;
 	float: left;
@@ -273,6 +246,8 @@ section{
 	margin: 12px 0 20px 0;
   }
   .lianxi p span {
+	margin-top: 10px;
+    display: block;
 	margin-right: 10px;
   }
   .lianxi p span a {
@@ -292,16 +267,39 @@ section{
   .nr_top { text-align:center; padding:60px 0 30px;}
 .nr_top b { font-size:48px; color:#000}
 .nr_top b em { color:#ff9700}
-.itemNews:hover{
-	border: 1px solid goldenrod
+
+.demoParent img{
+	width:100% !important;
+	height: auto !important;
 }
-.itemNews{
+#wx_img{
+	display: block;
+	width:auto  !important;
+	margin: 0 auto;
+}
+.demo_item_container{
+	width:25%;float:left;padding:10px;
+}
+.demo_item_container img{
+	width:100%;height: 160px;
+}
+.news_container{
+	margin:10px;padding:10px 50px;
+}
+.shigong_container{
+	margin:10px;padding:10px 50px;
 	box-sizing: border-box;
 	
 	border: 1px;
 	height: 200px;
 }
-.demoParent img{
-	width:100% !important;
-	height: auto !important;
+.shigong_container:hover{
+	border: 1px solid goldenrod;
+}
+.shigong_container img{
+	width:20%;
+	height:100%
+}
+.shigong_right_container{
+	width:75%;float:right;
 }

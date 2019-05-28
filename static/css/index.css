@@ -198,52 +198,7 @@ body{
 .gd ul li a:hover { background:url(Img/Index/gd_ico02.png) no-repeat 44px 11px;}
 .gd ul li a:hover b,.gd ul li a:hover em { color:#ff9700}
 
-.box-weixin .wixin-fa{
-  display: inline-block;
-  width: 100%;
-}
 
-.box-weixin .wixin-fa span{
-	display: block;
-	width: 200px;
-	height: 200px;
-	background-image: url("../images/weixin.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 0 auto;
-}
-
-.box-weixin .wixin-info{
-	position: relative;
-	display: inline-block;
-	width: 100%px;
-}
-
-.box-weixin .wixin-info a{	
-	text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    line-height: 34px;
-    width: 200px;
-    height: 36px;
-    margin: 5px auto;
-    border-radius: 10px;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    border: 1px #fff solid; 
-    border-color: rgba(255,153,0,1);
-    color: rgba(255,153,0,1); 
-}
-
-.box-weixin .wixin-info a:hover{
-    -webkit-box-shadow:0 0 20px rgba(255,153,0, .3);
-	-moz-box-shadow:0 0 20px rgba(255,153,0, .3);  
-    box-shadow:0 0 20px rgba(255,153,0, .3);
-}
-
-.box-weixin .wixin-info p{
-	text-align: left;
-}
 
 .box-right-mid .box-contact{
 	display: inline-block;
@@ -521,7 +476,4 @@ body{
   animation: 10s rowup linear infinite normal;
   position: relative;
   width: 200%;
-}
-.ov-h{
-  overflow: hidden;
 }

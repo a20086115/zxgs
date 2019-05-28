@@ -46,7 +46,7 @@
         <a href="product.html?type1=商业空间装修">商业空间装修</a>
       </li>
       <li>
-        <a href="product.html?type1=餐饮会所装修  ">会所装修</a>
+        <a href="product.html?type1=会所装修  ">会所装修</a>
       </li>
       <li>
         <a href="product.html">工程案例</a>
@@ -88,8 +88,8 @@
         <i class="headerDesc">
           <span class="">专业</span> 公装品牌 办公装修 设计施工 </i>
         <p class="lh_80">咨询热线：
-          <b>
-            <a class="color_yellow">0771-3925356</a>／ 17774819799</b>
+          <b >
+            <a class="color_yellow">0771-3925356</a>／ <a class="color_yellow">17774819799</a></b>
         </p>
         <img class="phone" src="./images/phone.png">
 
@@ -114,7 +114,7 @@
               <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
             </li>
             <li>
-              <a class="" href="product.html?type1餐饮会所装修  ">会所装修</a>
+              <a class="" href="product.html?type1会所装修  ">会所装修</a>
             </li>
             <li>
               <a class="" href="product.html">工程案例</a>
@@ -395,7 +395,7 @@
   </div>
 
   <!-- 设计团队 -->
-  <div>
+  <section class="sjtd">
     <div class="nr_top">
       <b>杰匠装饰 ·
         <em>设计团队</em>
@@ -442,7 +442,7 @@
     <div style="text-align: center;font-family: 'Microsoft Yahei'; font-weight:bold;padding:10px;color: #ff9700;font-size:24px;">
       精英设计团队，引领潮流，追求经典！
     </div>
-  </div>
+  </section>
 
   <!-- 服务流程 -->
   <div class="feature ov-h">
@@ -506,6 +506,7 @@
   <!-- 脚本加载 -->
   <script src="js/main.js"></script>
   <script src="	https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script>
+  <script src="./js/isPC.js"></script>
   <!-- <script src="./js/demo.js"></script> -->
   <script>
 
@@ -539,6 +540,9 @@
       </div>`;
     for (var i = 0; i < arrs.length; i++) {
       console.log(arrs[i])
+      if(!isPc && i>2){
+        break;
+      }
       var float = "fl"
 
       if (i % 2 != 0) {
@@ -571,21 +575,43 @@
           <a  href="product.html?type1=${arrs[i].text}&type2=${arrs[i].children[j]}" target="_blank" title="${arrs[i].children[j]}" rel="nofollow">${arrs[i].children[j]}</a>
           `
       }
-      html += `
-        </p>
-        <!-- banner轮播组件 -->
-        <div class="banner">
-          <div id="carousel-example${i}-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <!-- 图片组件 -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/${arrs[i].image}" alt="1 slide" style="height:350px">
+      if(isPc){
+        html += `
+          </p>
+          <!-- banner轮播组件 -->
+          <div class="banner">
+            <div id="carousel-example${i}-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+              <!-- 图片组件 -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/${arrs[i].image}" alt="1 slide" style="height:350px">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      `
+        `
+      }else{
+        html += `
+          </p>
+          `
+        var type1 = arrs[i].text;
+        var k = 0;
+        for(var demoItem of demos){
+            if(demoItem.type1 == type1){
+              k++;
+              if(k <= 4){              
+                html += `
+                  <a class="mobile_demo_parent" href="./product.html?type1=${demoItem.type1}&type2=${demoItem.type2}&title=${demoItem.title}">
+                    <img class="mobile_demo_img" style="" src="${demoItem.image}">  
+                    <span class="mobile_demo_span" >${demoItem.title}</span>
+                  </a>
+                `
+              }
+            }
+        }
+      }
+
     }
 
     $("#itemList2").html(html)

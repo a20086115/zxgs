@@ -48,7 +48,7 @@
         <a href="product.html?type1=商业空间装修">商业空间装修</a>
       </li>
       <li>
-        <a href="product.html?type1=餐饮会所装修  ">会所装修</a>
+        <a href="product.html?type1=会所装修  ">会所装修</a>
       </li>
       <li>
         <a href="product.html">工程案例</a>
@@ -79,7 +79,7 @@
   <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes" id="udesk-feedback-tab" class="udesk-feedback-tab-left"
     style="display: block; background-color: black;"></a>
   <!--qq聊天代码部分end-->
-  
+
   <!-- header顶部导航 -->
   <header>
     <div class="header-container">
@@ -112,7 +112,7 @@
               <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
             </li>
             <li>
-              <a class="" href="product.html?type1=餐饮会所装修  ">会所装修</a>
+              <a class="" href="product.html?type1=会所装修  ">会所装修</a>
             </li>
             <li>
               <a class="active" href="product.html">工程案例</a>
@@ -165,7 +165,7 @@
         <div class="box-right-top">
           <ul>
             <li>当前位置&nbsp>></li>
-            <li>工程案例</li>
+            <li><a href="./product.html">工程案例</a> </li>
             <li v-if="this.currentParent" @click="clickParent(currentParent)">
               &nbsp>>
               <a>{{currentParent}}</a>
@@ -195,26 +195,24 @@
               <p>
                 <b>欢迎扫码资讯</b>
               </p>
-              <span></span>
+              <img id="wx_img" src="./images/weixin.png" alt="">
             </div>
             <div class="wixin-info">
               <p>联系人：&nbsp 吴先生 </p>
               <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
-              <p>座机：&nbsp 0771-3925356 </p>
-              <p class="phone">电话：&nbsp +86 177 7481 9799</p>
-              <p class="phone">Q&nbspQ： &nbsp 3292757596</p>
+              <p>座机：&nbsp <a href="tel:0771-3925356"> 0771-3925356 </a> </p>
+              <p class="phone">电话：&nbsp <a href="tel:+86 177 7481 9799">+86 177 7481 9799</a></p>
+              <p class="phone">Q&nbspQ： &nbsp <a href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes">3292757596</a> </p>
             </div>
           </div>
         </div>
 
         <div class="box-right-mid clearfix" v-else>
-          <div v-for="(item,index) in demos" @click="clickItem(item)" style="width:25%;float:left;padding:10px;">
-            <div class="wixin-fa">
-              <img :src="item.image" :alt="item.title" style="width:100%;height: 200px;">
+          <div v-for="(item,index) in demos" @click="clickItem(item)" class="demo_item_container" style="">
+              <img :src="item.image" :alt="item.title" style="">
               <p style="text-align:center;margin:10px;">
                 {{item.title}}
               </p>
-            </div>
           </div>
         </div>
       </div>
@@ -238,6 +236,15 @@
       </div>
     </div>
   </div>
+
+    <!-- 移动端页面底部导航 -->
+    <div class="flex-container">
+        <div class="flex-item"><a href="tel:17774819799">电话咨询</a></div>
+        <div class="flex-item"><a href="./index.html">首页</a></div>
+        <div class="flex-item"><a href="./product.html">工程案例</a></div>
+        <div class="flex-item"><a href="./aboutus.html">关于杰匠</a></div>  
+      </div>
+    
   <!-- 返回顶部按钮 -->
   <button class="back-to-top" style="display: none;"></button>
   <!-- 框架库加载 -->
@@ -275,6 +282,7 @@
         // 点击展开折叠菜单事件
         clickParent: function (item, ind) {
           this.currentParent = item
+          // window.location.hash = 
           this.currentChild = ""
           this.currentItem = {};
           this.getDemos();
@@ -293,18 +301,43 @@
       },
       watch: {
         currentItem: function (n) {
+          
+          console.log(n)
           this.currentTitle = n.title;
+        },
+        currentParent:function(n){
+          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
+        },
+        currentChild:function(n){
+          console.log(n)
+          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
+        },
+        currentTitle:function(n){
+          console.log(n)
+          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         }
+
+
       },
       mounted: function () {
         this.currentParent = this.getUrlParam("type1");
         this.currentChild = this.getUrlParam("type2");
+        var title =  this.getUrlParam("title");
         console.log(this.currentChild, this.currentParent)
         //没选父类的话，展示所有类别
         if (!this.currentParent) {
           // this.currentParent = this.menuList[0].text
         } else {
           this.getDemos();
+        }
+        // 存在title , 展示详情页
+
+        if(title){
+          for(let demo of demos){
+            if(demo.title == title){
+               this.currentItem = demo;
+            }
+          }
         }
       },
 

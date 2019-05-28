@@ -47,7 +47,7 @@
         <a href="product.html?type1=商业空间装修">商业空间装修</a>
       </li>
       <li>
-        <a href="product.html?type1=餐饮会所装修  ">会所装修</a>
+        <a href="product.html?type1=会所装修  ">会所装修</a>
       </li>
       <li>
         <a href="product.html">工程案例</a>
@@ -115,7 +115,7 @@
               <a class="" href="product.html?type1=商业空间装修">商业空间装修</a>
             </li>
             <li>
-              <a class="" href="product.html?type1=餐饮会所装修  ">会所装修</a>
+              <a class="" href="product.html?type1=会所装修  ">会所装修</a>
             </li>
             <li>
               <a class="" href="product.html">工程案例</a>
@@ -163,21 +163,22 @@
           <div class="box-weixin clearfix">
             <div class="wixin-fa">
               <p>
-                <b>欢迎扫码资讯</b>
+                欢迎扫码资讯
               </p>
-              <span></span>
+              <img id="wx_img" src="./images/weixin.png" alt="">
             </div>
             <div class="wixin-info">
               <p>联系人：&nbsp 吴先生 </p>
               <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
-              <p>座机：&nbsp 0771-3925356 </p>
-              <p class="phone">电话：&nbsp +86 177 7481 9799</p>
-              <p class="phone">Q&nbspQ： &nbsp 3292757596</p>
+              <p>座机：&nbsp <a href="tel:0771-3925356"> 0771-3925356 </a> </p>
+              <p class="phone">电话：&nbsp <a href="tel:+86 177 7481 9799">+86 177 7481 9799</a></p>
+              <p class="phone">Q&nbspQ： &nbsp <a href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes">3292757596</a> </p>
             </div>
           </div>
+
         </div>
         <div class="box-right-mid clearfix" v-else>
-          <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" style="margin:10px;padding:10px 50px;"> 
+          <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="news_container"> 
             <a @click="clickItem(index)">{{item.text}}</a>
             <span style="float:right">{{item.date}}</span>
             <div style="margin-top:10px;">
@@ -208,6 +209,16 @@
         </div>
       </div>
     </div>
+
+      <!-- 移动端页面底部导航 -->
+  <div class="flex-container">
+      <div class="flex-item"><a href="tel:17774819799">电话咨询</a></div>
+      <div class="flex-item"><a href="./index.html">首页</a></div>
+      <div class="flex-item"><a href="./product.html">工程案例</a></div>
+      <div class="flex-item"><a href="./aboutus.html">关于杰匠</a></div>  
+    </div>
+
+    
   <!-- 返回顶部按钮 -->
   <button class="back-to-top" style="display: none;"></button>
   <!-- 框架库加载 -->
