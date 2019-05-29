@@ -69,7 +69,7 @@ header .header-container {
   font-family: "Microsoft Yahei";
 }
 .color_yellow {
-  color: #FF7A00;
+  color: #FF7A00 !important;
 }
 .h_top p b {
   padding: 0 5px;
@@ -464,7 +464,7 @@ header .header-container .nav-box .nav-mobile-menu span{
   position: fixed;
   left: 0px;
   right: 0px;
-  bottom: 3px;
+  bottom: 75px;
   display: none;
   width: 100%;
   height: 50px;
@@ -472,15 +472,24 @@ header .header-container .nav-box .nav-mobile-menu span{
 }
 
 .flex-item {
-  margin: 0 1px;
+  margin: 0 ;
+  padding:5px;
   background-color: rgb(255,151,0);  
   width: 25%;
-  height: 50px;
+  height: 70px;
   text-align: center;
-  line-height: 50px;
 }
-.flex-item a{
+.flex-item img{
+  width:60%;
+  height:45px;
+  display:inline-block;
+}
+.flex-item  span{
+  display: block;
   color: white;
+}
+.showMobile{
+  display: none;
 }
 
 /*响应式媒体查询处理*/
@@ -584,7 +593,7 @@ header .header-container .nav-box .nav-mobile-menu span{
     height: auto !important; 
   }
   .nr_top b { 
-    font-size:28px !important;
+    font-size:24px !important;
   }
   .adaptive-circle h2{
     margin: 0;
@@ -644,13 +653,13 @@ header .header-container .nav-box .nav-mobile-menu span{
     text-overflow: ellipsis;
   }
   .demo_item_container{
-    width:100% !important;
+    width:50% !important;
     float:left;
     padding:10px;
   }
   .demo_item_container img{
     width:100%;
-    height: auto !important;
+    height: 100px !important;
   }
   .box-weixin .wixin-fa {
     width: 100% !important;
@@ -694,4 +703,43 @@ header .header-container .nav-box .nav-mobile-menu span{
   .shigong_right_container span, .shigong_right_container p{
     display: none
   }
+  .hideMobile{
+    display: none !important;
+  }
+  .showMobile{
+    display: block;
+  }
+  .h_top {
+    padding: 0;
+    line-height: 14px;
+  }
+  .nr01 .nr01-top strong {
+    font-size: 18px !important;
+  }
+  .mobile_parent_menu{
+    border: solid 1px #eaeaea;
+    border-radius: 2px;
+    width: 33%;
+    height: 34px;
+    line-height: 34px;
+    display: block;
+    font-size: 16px;
+    color: black;
+    float: left;
+    text-align: center;
+  }
+  .mobile_child_menu{
+
+    border: solid 1px #eaeaea;
+    border-radius: 2px;
+    width: 33%;
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    font-size: 12px;
+    color: #212324;
+    float: left;
+    text-align: center;
+  }
+
 }

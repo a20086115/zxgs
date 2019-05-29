@@ -200,13 +200,17 @@ section{
 	margin: 0 auto;
 }
 .demo_item_container{
-	width:25%;float:left;padding:10px;
+	width:25%;
+	float:left;
+	padding:10px;
 }
 .demo_item_container img{
-	width:100%;height: 160px;
+	width:100%;
+	height: 160px;
 }
 .news_container{
-	margin:10px;padding:10px 50px;
+	margin:10px;
+	padding:10px 50px;
 }
 .shigong_container{
 	margin:10px;padding:10px 50px;
