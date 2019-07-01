@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script>
-    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js"></script>
-    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong.js"></script>
+    <!-- <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script> -->
+    <!-- <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js"></script>
+    <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong.js"></script> -->
+    <script>
+         document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js?random="+Math.random()+"'></s"+"cript>");
+         document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js?random="+Math.random()+"'></s"+"cript>");
+         document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong.js?random="+Math.random()+"'></s"+"cript>");
+    </script>
     <!-- <script src="./js/shigong.js"></script> -->
     <!-- 引入样式 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -32,16 +37,12 @@
 
         <div v-if="labelPosition == 'left'">
             <el-input v-model="currentDirt"></el-input>
-            <div class="clearfix">
-                <img style="width:15%;height:auto;float:left;margin-left:10px;" v-for="index in 100" :src="'https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demoImages/' + currentDirt + '/图片' + index + '.jpg'" @click="clickImg(index)" onerror="this.style.display='none'" onload="this.style.display=''">
-            </div>
+  
         </div>
 
         <div v-if="labelPosition == 'shigong'">
             <el-input v-model="currentShigongDirt"></el-input>
-            <div class="clearfix">
-                <img style="width:15%;height:auto;float:left;margin-left:10px;" v-for="index in 100" :src="'https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/shigong/' + currentShigongDirt + '/图片' + index + '.jpg'" @click="clickShigongImg(index)" onerror="this.style.display='none'" onload="this.style.display=''">
-            </div>
+  
         </div>
   
         <div style="margin: 20px;"></div>

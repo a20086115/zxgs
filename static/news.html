@@ -27,7 +27,9 @@
   <!-- Favicons网站图标 -->
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="bookmark" href="img/favicon.ico" type="image/x-icon" />
-  <script src="	https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js"></script>
+  <script>
+      document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/news.js?random="+Math.random()+"'></s"+"cript>");
+ </script>
   <!-- <script src="./js/news.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
@@ -156,51 +158,73 @@
   <section>
     <div id="app" class="box clearfix">
       <div style="margin:10px;">
-        <div class="box-right-top">
-          <ul>
-            <li>当前位置&nbsp>></li>
-            <li  @click="currentItem = {}"><a>资讯中心</a> </li>
-            <li v-if="currentItem.text">&nbsp>>{{currentItem.text}}</li>
-          </ul>
-        </div>
-        <div class="box-right-mid clearfix" v-if="currentItem.text">
-          <div v-html="currentItem.content">
-            {{currentItem.content}}
-          </div>
-          <p style="margin: 10px;font-size:18px;font-weight:bold;">
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp广西杰匠装饰，以诚信为宗旨，巧妙的设计构思，精良的施工工艺，优质的质保服务。坚持以客户为中心，为客户提供满意的装修服务。了解更多有关办公室装修，商业空间装修，高端办公室装修，投资办公室装修，各种装修资讯可以直接拨打热线0771-3925356,我们期待您的来电。
-          </p>
-          <P style="margin: 10px;font-size:18px;font-weight:bold;">
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp主营业务：办公室装修，商场装修，餐饮店装修，会所装修，酒店宾馆装修，学校装修，幼儿园装修，厂房装修
-          </P>
 
-          <div class="box-weixin clearfix">
-            <div class="wixin-fa">
-              <p>
-                欢迎扫码资讯
-              </p>
-              <img id="wx_img" src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png" alt="">
+          <div class="box-left">
+            <div class="title">
+              <h3>资讯中心</h3>
             </div>
-            <div class="wixin-info">
-              <p>联系人：&nbsp 吴先生 </p>
-              <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
-              <p>座机：&nbsp <a href="tel:0771-3925356"> 0771-3925356 </a> </p>
-              <p class="phone">电话：&nbsp <a href="tel:+86 177 7481 9799">+86 177 7481 9799</a></p>
-              <p class="phone">Q&nbspQ： &nbsp <a href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes">3292757596</a> </p>
+            <div class="asideBox">
+              <aside>
+                <ul class="asideMenu">
+                  <li v-for="(item,index) in ['装修新闻','行业热点','知识专区','工装资讯','公司新闻','装修问答']">
+                    <div class="oneMenu">
+                      <a>{{item}}</a>
+                    </div>
+                  </li>
+                </ul>
+              </aside>
             </div>
           </div>
 
-        </div>
-        <div class="box-right-mid clearfix" v-else>
-          <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="news_container"> 
-            <a @click="clickItem(index)">{{item.text}}</a>
-            <span style="float:right">{{item.date}}</span>
-            <div style="margin-top:10px;">
-              {{item.desc}}
-            </div>
+          <div class="box-right">
+              <div class="box-right-top">
+                  <ul>
+                    <li>当前位置&nbsp>></li>
+                    <li  @click="currentItem = {}"><a>资讯中心</a> </li>
+                    <li v-if="currentItem.text">&nbsp>>{{currentItem.text}}</li>
+                  </ul>
+                </div>
+                <div class="box-right-mid clearfix" v-if="currentItem.text">
+                  <div v-html="currentItem.content">
+                    {{currentItem.content}}
+                  </div>
+                  <p style="margin: 10px;font-size:18px;font-weight:bold;">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp广西杰匠装饰，以诚信为宗旨，巧妙的设计构思，精良的施工工艺，优质的质保服务。坚持以客户为中心，为客户提供满意的装修服务。了解更多有关办公室装修，商业空间装修，高端办公室装修，投资办公室装修，各种装修资讯可以直接拨打热线0771-3925356,我们期待您的来电。
+                  </p>
+                  <P style="margin: 10px;font-size:18px;font-weight:bold;">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp主营业务：办公室装修，商场装修，餐饮店装修，会所装修，酒店宾馆装修，学校装修，幼儿园装修，厂房装修
+                  </P>
+        
+                  <div class="box-weixin clearfix">
+                    <div class="wixin-fa">
+                      <p>
+                        欢迎扫码资讯
+                      </p>
+                      <img id="wx_img" src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png" alt="">
+                    </div>
+                    <div class="wixin-info">
+                      <p>联系人：&nbsp 吴先生 </p>
+                      <p>地址：&nbsp 南宁江南区工业机械设计院501号 </p>
+                      <p>座机：&nbsp <a href="tel:0771-3925356"> 0771-3925356 </a> </p>
+                      <p class="phone">电话：&nbsp <a href="tel:+86 177 7481 9799">+86 177 7481 9799</a></p>
+                      <p class="phone">Q&nbspQ： &nbsp <a href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes">3292757596</a> </p>
+                    </div>
+                  </div>
+        
+                </div>
+                <div class="box-right-mid clearfix" v-else>
+                  <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="news_container"> 
+                    <a @click="clickItem(index)">{{item.text}}</a>
+                    <span style="float:right">{{item.date}}</span>
+                    <div style="margin-top:10px;">
+                      {{item.desc}}
+                    </div>
+                  </div>
+                </div>
+            
           </div>
-        </div>
-    
+
+      
 
       </div>
     </div>
