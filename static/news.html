@@ -214,7 +214,7 @@
                 </div>
                 <div class="box-right-mid clearfix" v-else>
                   <div v-for="(item,index) in menuList"  :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="news_container"> 
-                    <a @click="clickItem(index)">{{item.text}}</a>
+                    <a @click="clickItem(index)" style="font-size:18px">{{item.text}}</a>
                     <span style="float:right">{{item.date}}</span>
                     <div style="margin-top:10px;">
                       {{item.desc}}
