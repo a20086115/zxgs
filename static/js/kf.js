@@ -24,14 +24,14 @@ if(kfguin)
   {
   	  companyname = companyname.substr(0,15);	   	  
       welcomeword = kf_processWelcomeword(welcomeword);
-  	  
+		console.log(welcomeword)
   	  kfguin = kf_getSafeHTML(kfguin);
   	  companyname = kf_getSafeHTML(companyname);
   	  
   	  welcomeword = welcomeword.replace(/<brT>/g,'\r\n');
   	  welcomeword = kf_getSafeHTML(welcomeword);
   	  welcomeword = welcomeword.replace(/\r/g, "").replace(/\n/g, "<BR>");
-  
+	
       window.setTimeout("kf_sleepShow()",2000);
       //kf_sleepShow();
   }
@@ -120,7 +120,7 @@ function kf_getPopupDivHtml(kfguin,reference,companyname,welcomeword)
     temp += '<div style="font-family: Tahoma;text-align:left;float: left;height: 150px;width: 324px;background-image: url('+urlroot+'bg_2.gif);background-repeat: repeat-x;">';
     temp += '<div><h1 style="	float:left;font-size: 14px;color: #FFFFFF;margin: 0px;padding: 10px 0 13px 2px;line-height:17px;">'+companyname+'</h1><a href="#" onclick="kf_hidekfpopup();return false;" style="background-image: url('+urlroot+'close.gif);float: right;height: 19px;width: 42px;" onmouseover="javascript:this.style.backgroundPosition=\'bottom\'" onmouseleave="javascript:this.style.backgroundPosition=\'top\'"></a></div>';
     temp += '<div style="height:83px;padding: 0 0 0 2px;clear:both;">';
-    temp += '<div style="background-image: url('+urlroot+'face.jpg);height: 70px;width: 70px;float:left;"></div>';
+    temp += '<div style="background-image: url('+urlroot+'face.jpg);background-size:cover;height: 70px;width: 70px;float:left;"></div>';
     temp += '<p style="font-family:Tahoma;font-size:12px;line-height:24px;width: 240px;margin:0px;padding: 0 0 0 12px;display:block;float:left;margin-top:2px;word-wrap:break-word;">'+welcomeword+'</p></div>';
     temp += '<div style="clear: both;">';
     temp += '<a onclick="kf_hidekfpopup();return false;" href="#" style="float:right;background-image: url('+urlroot+'btn_1.gif);margin: 0 0 0 5px;padding: 0px;border:0px;height: 21px;width: 69px;"></a>';
@@ -172,7 +172,7 @@ function kf_validateWelcomeword(word)
 				return 2;
 		}
 	}
-	if(word.length > 57+2*count)
+	if(word.length > 77+2*count)
 	{
 		return 1;
 	}
@@ -190,15 +190,15 @@ function kf_validateWelcomeword(word)
   	{
   		count += 38;
   	}
-  	else if(temp-1<=57)
+  	else if(temp-1<=77)
   	{
-  		count += 57;
+  		count += 77;
   	}
   	
   	temp = word.indexOf('\n');
   }
   count+=word.length;	
-  if(count>57)
+  if(count>77)
   {
   	return 3;
   }
@@ -208,48 +208,48 @@ function kf_validateWelcomeword(word)
 
 function kf_processWelcomeword(word)
 {
-	word = word.substr(0,57+10);
+	// word = word.substr(0,77+10);
 	var result = '';
 	var count = 0;	
 	var temp = word.indexOf('<brT>');
 	
-  while(count<57 && temp!=-1)
+  while(count<77 && temp!=-1)
   {
 
   	if(temp<=19) 
   	{
   		count += 19;
-  		if(count<=57)
+  		if(count<=77)
   		{
   		   result += word.substr(0,temp+5);
   	  }
   	  else
   	  {
-  	  	 result += word.substr(0,57-count>word.length?word.length:57-count);
+  	  	 result += word.substr(0,77-count>word.length?word.length:77-count);
   	  }
   	}
   	else if(temp<=38)
   	{
   		count += 38;
-  		if(count<=57)
+  		if(count<=77)
   		{
   		   result += word.substr(0,temp+5);
   	  }
   	  else
   	  {
-  	  	 result += word.substr(0,57-count>word.length?word.length:57-count);
+  	  	 result += word.substr(0,77-count>word.length?word.length:77-count);
   	  }
   	}
-  	else if(temp<=57)
+  	else if(temp<=77)
   	{
-  		count += 57;
-  		if(count<=57)
+  		count += 77;
+  		if(count<=77)
   		{
   		   result += word.substr(0,temp+5);
   	  }
   	  else
   	  {
-  	  	 result += word.substr(0,57-count>word.length?word.length:57-count);
+  	  	 result += word.substr(0,77-count>word.length?word.length:77-count);
   	  }
   	}
   	
@@ -257,9 +257,9 @@ function kf_processWelcomeword(word)
   	temp = word.indexOf('<brT>');
   }
   
-  if(count<57)
+  if(count<77)
   {
-      result += word.substr(0,57-count>word.length?word.length:57-count);
+      result += word.substr(0,77-count>word.length?word.length:77-count);
   }
   
   return result;

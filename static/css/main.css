@@ -2,6 +2,9 @@
 body{
   font-family: "Microsoft Yahei";
 }
+.wpa_popup{
+  display: none;
+}
 .fl{
   float: left;
 }
