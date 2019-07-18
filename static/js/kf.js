@@ -148,7 +148,7 @@ function kf_getPopupRightDivHtml(kfguin,reference)
 //added by simon 2008-11-04
 function kf_openChatWindow(flag)
 {
-	window.open('http://wpa.qq.com/msgrd?v=3&amp;uin='+kfguin+'&amp;site=qq&amp;menu=yes', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');
+	window.open('http://wpa.qq.com/msgrd?v=3&uin='+kfguin+'&site=qq&menu=yes', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');
 	if(flag==1)
 	{
 		kf_hidekfpopup();
