@@ -95,7 +95,7 @@ header .header-container .nav-box .nav-left #logo_top {
 }
 header .header-container .nav-box .nav-mid {
   height: 50px;
-  padding: 0 100px;
+  padding: 0 0px;
   color: white;
   font-weight: bold;
   /* float: right; */
