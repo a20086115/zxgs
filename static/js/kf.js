@@ -36,7 +36,7 @@ if(kfguin)
       //kf_sleepShow();
   }
   window.setTimeout("kf_moveWithScroll()",1);
-  //window.setInterval("wpa_count()",10000);
+//   window.setInterval("wpa_count()",10000);
 }
 
 function kf_getSafeHTML(s)
@@ -110,7 +110,11 @@ function kf_hidekfpopup()
 		tOut=-1;
 	}
 	document.getElementById("kfpopupDiv").style.visibility = "hidden";
-	tOut=window.setTimeout("kf_moveWithScroll()",1);
+	// tOut=window.setTimeout("kf_moveWithScroll()",1);
+	window.setTimeout(function(){
+		document.getElementById("kfpopupDiv").style.visibility = "";
+		// tOut=window.setTimeout("kf_moveWithScroll()",1);
+	},30000);
 }
 
 function kf_getPopupDivHtml(kfguin,reference,companyname,welcomeword)
