@@ -332,7 +332,7 @@ function kf_sleepShow()
 	kf_setCookie('hasshown', 1, '', '/', 'wpa.qq.com'); 
 	
 	var position = parseInt(document.getElementById("rightDiv").style.top) + 150;
-	popupDivHtml = '<div id="kfpopupDiv" onmousedown="MyMove.Move(\'kfpopupDiv\',event,1);"  style="z-index:10000;filter:alpha(opacity=90);position: absolute; top: '+position+'px; right: 650px;color:#000;font-size: 12px;cursor:move;height: 150px;width: 340px;">';
+	popupDivHtml = '<div id="kfpopupDiv"   style="z-index:10000;filter:alpha(opacity=90);position: fixed; top: 40%; left:40%;;color:#000;font-size: 12px;height: 150px;width: 340px;">';
   popupDivHtml += kf_getPopupDivHtml(kfguin,ws,companyname,welcomeword);
   popupDivHtml += '</div>';
   document.body.insertAdjacentHTML("beforeEnd",popupDivHtml);
