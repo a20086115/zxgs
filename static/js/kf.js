@@ -35,7 +35,7 @@ if(kfguin)
       window.setTimeout("kf_sleepShow()",2000);
       //kf_sleepShow();
   }
-  window.setTimeout("kf_moveWithScroll()",1);
+  //window.setTimeout("kf_moveWithScroll()",1);
 //   window.setInterval("wpa_count()",10000);
 }
 
@@ -336,10 +336,10 @@ function kf_sleepShow()
 	kf_setCookie('hasshown', 1, '', '/', 'wpa.qq.com'); 
 	
 	var position = parseInt(document.getElementById("rightDiv").style.top) + 150;
-	popupDivHtml = '<div id="kfpopupDiv"   style="z-index:10000;-ms-transform:scale(1.2,1.2); -webkit-transform: scale(1.2,1.2); transform: scale(1.2,1.2); /* 标准语法 */filter:alpha(opacity=90);position: fixed; top: 40%; left:40%;;color:#000;font-size: 12px;height: 150px;width: 340px;">';
-  popupDivHtml += kf_getPopupDivHtml(kfguin,ws,companyname,welcomeword);
-  popupDivHtml += '</div>';
-  document.body.insertAdjacentHTML("beforeEnd",popupDivHtml);
+	popupDivHtml = '<div id="kfpopupDiv"   style="z-index:10000;-ms-transform:scale(1.2,1.2);-webkit-transform: scale(1.2,1.2);transform: scale(1.2,1.2); filter:alpha(opacity=90);position: fixed; top: 40%; left:40%;;color:#000;font-size: 12px;height: 150px;width: 340px;">';
+	popupDivHtml += kf_getPopupDivHtml(kfguin,ws,companyname,welcomeword);
+	popupDivHtml += '</div>';
+	document.body.insertAdjacentHTML("beforeEnd",popupDivHtml);
 } 
 
 function kf_dealErrors() 
