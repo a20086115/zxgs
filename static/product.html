@@ -323,7 +323,7 @@
         getDemos: function () {
           this.demos = [];
           for (let demo of demos) {
-            if (demo.type1 == this.currentParent && (demo.type2 == this.currentChild || !this.currentChild)) {
+            if (this.currentParent.indexOf(demo.type1)!= -1 && (demo.type2 == this.currentChild || !this.currentChild)) {
               this.demos.push(demo)
             }
           }
