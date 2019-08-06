@@ -195,21 +195,26 @@
 
 
         </div>
-        <div class="box-right-mid clearfix" v-else>
-          <div v-for="(item,index) in menuList" class="shigong_container" :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="" > 
-            <img :src="item.image"  alt="">
-            <div class="shigong_right_container" >
-              <a @click="clickItem(index)" style="font-size: 24px">{{item.text}}</a>
-              <span style="float:right">{{item.date}}</span>
-              <p style="margin-top:10px;height:80px;overflow:hidden;">
-                {{item.desc}}
-              </p>
-
-            </div>
-            
-
-          </div>
+        <div v-else>
+            <div class="box-right-mid clearfix" >
+                <div v-for="(item,index) in showDemos" class="shigong_container" :class="index%2 == 0 ? 'bg-gray' : 'bg-blue'" class="" > 
+                  <img :src="item.image"  alt="">
+                  <div class="shigong_right_container" >
+                    <a @click="clickItem(index)" style="font-size: 24px">{{item.text}}</a>
+                    <span style="float:right">{{item.date}}</span>
+                    <p style="margin-top:10px;height:80px;overflow:hidden;">
+                      {{item.desc}}
+                    </p>
+      
+                  </div>
+                  
+      
+                </div>
+              </div>
+          <el-pagination v-if="menuList.length" style="background: white;text-align:center;padding-top: 20px;" :pager-count="4" background layout="prev, pager, next" :total="menuList.length" :page-size="pageSize" @current-change="currentChange" :current-page.sync = "currentPage"></el-pagination>
+    
         </div>
+       
     
 
       </div>
@@ -262,13 +267,19 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- 脚本加载 -->
   <script src="js/main.js"></script>
-
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script>
     var app4 = new Vue({
       el: '#app',
       data: {
         menuList: shigong,
         currentItem: {},
+        showDemos: [],
+        currentPage: 1,
+        pageSize: 2
       },
       methods: {
         getUrlParam: function (name) {
@@ -278,6 +289,10 @@
         },
         clickItem:function(index){
           this.currentItem = this.menuList[index]
+        },
+        currentChange: function(s,n){
+          this.currentPage = s;
+          this.showDemos = this.menuList.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
         }
       },
       mounted: function () {
@@ -286,6 +301,8 @@
         }
         console.log(this.currentItem)
         this.menuList = this.menuList.reverse()
+        this.showDemos = this.menuList.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
+  
       },
 
     })

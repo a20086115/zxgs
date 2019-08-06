@@ -238,15 +238,19 @@
             </div>
           </div>
         </div>
-
-        <div class="box-right-mid clearfix" v-else>
-          <div v-for="(item,index) in demos" @click="clickItem(item)" class="demo_item_container mobile_demo_parent" >
-              <img class="mobile_demo_img" :src="item.image" :alt="item.title" >
-              <p class="mobile_demo_span" style="text-align:center;margin:10px;">
-                {{item.title}}
-              </p>
+        <div v-else>
+          <div class="box-right-mid clearfix" >
+            <div v-for="(item,index) in showDemos" @click="clickItem(item)" class="demo_item_container mobile_demo_parent" >
+                <img class="mobile_demo_img" :src="item.image" :alt="item.title" >
+                <p class="mobile_demo_span" style="text-align:center;margin:10px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                  {{item.title}}
+                </p>
+            </div>
           </div>
+          
+          <el-pagination v-if="demos.length" style="background: white;text-align:center;padding-top: 20px;"  background layout="total, prev, pager, next" :total="demos.length" :page-size="pageSize" @current-change="currentChange" :current-page.sync = "currentPage"></el-pagination>
         </div>
+   
       </div>
     </div>
   </section>
@@ -299,6 +303,11 @@
   <!-- 脚本加载 -->
   <script src="js/main.js"></script>
 
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
   <script>
     
     demos = demos.reverse()
@@ -312,6 +321,9 @@
         currentChild: "",
         currentTitle: "",
         currentItem: {},
+        showDemos: [],
+        currentPage: 1,
+        pageSize: 16
 
       },
       methods: {
@@ -327,6 +339,8 @@
               this.demos.push(demo)
             }
           }
+          this.currentPage = 1;
+          this.showDemos = this.demos.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
         },
         // 点击展开折叠菜单事件
         clickParent: function (item, ind) {
@@ -347,6 +361,10 @@
           this.currentParent = item.type1;
           this.currentChild = item.type2;
           this.currentTitle = item.title;
+        },
+        currentChange: function(s,n){
+          this.currentPage = s;
+          this.showDemos = this.demos.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
         }
       },
       watch: {
@@ -377,6 +395,9 @@
         //没选父类的话，展示所有类别
         if (!this.currentParent) {
           // this.currentParent = this.menuList[0].text
+          
+          this.currentPage = 1;
+          this.showDemos = this.demos.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
         } else {
           this.getDemos();
         }
