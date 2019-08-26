@@ -346,7 +346,11 @@
         getDemos: function () {
           this.demos = [];
           for (let demo of demos) {
+<<<<<<< HEAD
             if ((demo.type1.indexOf(this.currentParent)!= -1 || this.currentParent.indexOf(demo.type1) != -1)&& (demo.type2 == this.currentChild || !this.currentChild)) {
+=======
+            if ((this.currentParent.indexOf(demo.type1)!= -1 || demo.type1.indexOf(this.currentParent)!= -1) && (demo.type2 == this.currentChild || !this.currentChild)) {
+>>>>>>> b10741f9bdb6d4e44bc061234e04c463bc586085
               this.demos.push(demo)
             }
           }
