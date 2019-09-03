@@ -27,9 +27,10 @@
   <!-- Favicons网站图标 -->
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="bookmark" href="img/favicon.ico" type="image/x-icon" />
-  <script>
+  <script src="https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js"></script>
+  <!-- <script>
       document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/demo.js?random="+Math.random()+"'></s"+"cript>");
- </script>
+ </script> -->
  <!-- 百度竞价 -->
  <script>
     var _hmt = _hmt || [];
@@ -345,7 +346,7 @@
         getDemos: function () {
           this.demos = [];
           for (let demo of demos) {
-            if (this.currentParent.indexOf(demo.type1)!= -1 && (demo.type2 == this.currentChild || !this.currentChild)) {
+            if ((demo.type1.indexOf(this.currentParent)!= -1 || this.currentParent.indexOf(demo.type1) != -1)&& (demo.type2 == this.currentChild || !this.currentChild)) {
               this.demos.push(demo)
             }
           }
@@ -384,15 +385,15 @@
           this.currentTitle = n.title;
         },
         currentParent:function(n){
-          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
+          history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         },
         currentChild:function(n){
           console.log(n)
-          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
+          history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         },
         currentTitle:function(n){
           console.log(n)
-          history.replaceState({},"11","./product.html?type1=" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
+          history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         }
 
 

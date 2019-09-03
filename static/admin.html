@@ -274,12 +274,19 @@
                     this.tableData.push(JSON.parse(JSON.stringify(this.currentItem)))
                 },
                 handleExport() {
+                    var obj = {};
+                    obj.arrs = this.options;
+                    obj.demos = this.tableData;
+                    downloadFile("demo.json", JSON.stringify(obj))
                     downloadFile("demo.js", "var arrs = " + JSON.stringify(this.options) + ";\r\nvar demos = " + JSON.stringify(this.tableData))
                 },
                 handleNewsSave() {
                     this.news.push(JSON.parse(JSON.stringify(this.currentNews)))
                 },
                 handleNewsExport() {
+                    var obj = {};
+                    obj.news = this.news;
+                    downloadFile("news.json", JSON.stringify(obj))
                     downloadFile("news.js", "var news = " + JSON.stringify(this.news))
                 },
 
@@ -295,6 +302,9 @@
                     this.shigong.push(JSON.parse(JSON.stringify(this.currentShigong)))
                 },
                 handleShigongExport() {
+                    var obj = {};
+                    obj.shigong = this.shigong;
+                    downloadFile("shigong.json", JSON.stringify(obj))
                     downloadFile("shigong.js", "var shigong = " + JSON.stringify(this.shigong))
                 },
                 clickImg(index,item) {
