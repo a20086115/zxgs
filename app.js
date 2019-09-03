@@ -27,7 +27,6 @@ app.use(function(req,res,next){
 
   app.use(express.static(path.join(__dirname, 'static')));
 
-
 httpServer.listen(PORT, function() {
   console.log('HTTP Server is running on: http://www.jiejiangzs.com/');
 });
