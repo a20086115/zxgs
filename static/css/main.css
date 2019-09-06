@@ -590,6 +590,7 @@ header .header-container .nav-box .nav-mobile-menu span{
   .nr_top {
     text-align: center;
     padding: 0px !important;
+    
   }
   .nr01-top{
     padding: 0 !important; 
@@ -632,7 +633,7 @@ header .header-container .nav-box .nav-mobile-menu span{
     display: flex;
   }
   .copy{
-    margin-bottom: 55px;
+    margin-bottom: 70px;
   }
   .mobile_demo{
     text-align: center;
@@ -754,6 +755,9 @@ header .header-container .nav-box .nav-mobile-menu span{
   }
   .feature_item {
      margin-bottom: 10px !important;
-}
+  }
+  .nr_top {
+    background:gray
+  }
 
 }
