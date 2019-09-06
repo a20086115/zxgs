@@ -1,5 +1,5 @@
 section{
-	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/bk.png");	
+	background-image: url("https://jiejiangs-1253930943.file.myqcloud.com/images/bk.png");	
 	background-repeat: repeat-y;
 	background-size: cover;
 	width: 100%;
@@ -140,7 +140,7 @@ h4.title{
 	display: block;
 	width: 160px;
 	height: 160px;
-	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png");
+	background-image: url("https://jiejiangs-1253930943.file.myqcloud.com/images/weixin.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0 auto;
@@ -163,7 +163,7 @@ h4.title{
 
 
 .lianxi{
-	background: #333 url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/hz-bg.jpg) no-repeat top center;
+	background: #333 url(https://jiejiangs-1253930943.file.myqcloud.com/images/hz-bg.jpg) no-repeat top center;
 	color: #fff;
 	padding: 50px 0px;
   }

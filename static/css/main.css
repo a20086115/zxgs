@@ -186,7 +186,7 @@ header .header-container .nav-box .nav-mid .navbar-nav li.line-item {
   z-index:999;
 }
 .izl-rmenu .consult{    
-background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
+background-image: url(https://jiejiangs-1253930943.file.myqcloud.com/images/consult_icon.gif);
 background-repeat: no-repeat;
 background-position: center -77px;
 display: block;
@@ -211,7 +211,7 @@ width: 82px;
 }
 .izl-rmenu .consult:hover .phone{display:inline !important;}
 .izl-rmenu .cart {
-  background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
+  background-image: url(https://jiejiangs-1253930943.file.myqcloud.com/images/consult_icon.gif);
   background-repeat: no-repeat;
   background-position: center bottom;
   display: block;
@@ -245,7 +245,7 @@ width: 82px;
   box-shadow: #DDD 0px -1px 5px;
   z-index: 10000;
   cursor: pointer;
-  background-image: url(https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/consult_icon.gif);
+  background-image: url(https://jiejiangs-1253930943.file.myqcloud.com/images/consult_icon.gif);
   background-repeat: no-repeat;
   background-position: center top;
   display: block;
@@ -265,7 +265,7 @@ width: 82px;
 	display: block;
 	width: 200px;
 	height: 200px;
-	background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/weixin.png");
+	background-image: url("https://jiejiangs-1253930943.file.myqcloud.com/images/weixin.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0 auto;
@@ -380,7 +380,7 @@ footer ul:last-child{
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-image: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/back2top.png");
+  background-image: url("https://jiejiangs-1253930943.file.myqcloud.com/images/back2top.png");
   width: 40px;
   height: 40px;
   background-size: cover;
@@ -411,7 +411,7 @@ header .header-container .nav-box .nav-mobile-menu span{
   display: inline-block;
   width: 40px;
   height: 50px;
-  background: url("https://jiejiangs-1253930943.cos.ap-guangzhou.myqcloud.com/images/menu2.png") no-repeat;
+  background: url("https://jiejiangs-1253930943.file.myqcloud.com/images/menu2.png") no-repeat;
   background-size: 100%;
   cursor: pointer;
 }
@@ -605,7 +605,7 @@ header .header-container .nav-box .nav-mobile-menu span{
     font-size: 28px !important;
   }
   .adaptive-circle p{
-    display: none;
+    font-size: 12px;
   }
   .fulcImg{
     display: none !important;
