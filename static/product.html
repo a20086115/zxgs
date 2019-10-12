@@ -253,7 +253,7 @@
             </div>
           </div>
           
-          <el-pagination v-if="demos.length" style="background: white;text-align:center;padding-top: 20px;"  background layout="total, prev, pager, next" :total="demos.length" :page-size="pageSize" @current-change="currentChange" :current-page.sync = "currentPage"></el-pagination>
+          <el-pagination :small="small" v-if="demos.length" style="background: white;text-align:center;padding-top: 20px;"  background layout="prev, pager, next" :total="demos.length" :page-size="pageSize" @current-change="currentChange" :current-page.sync = "currentPage"></el-pagination>
         </div>
    
       </div>
@@ -312,7 +312,7 @@
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <!-- 引入组件库 -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-
+  <script src="./js/isPC.js"></script>
   <script>
     
     demos = demos.reverse()
@@ -328,7 +328,8 @@
         currentItem: {},
         showDemos: [],
         currentPage: 1,
-        pageSize: 16
+        pageSize: 16,
+        small:false
 
       },
       methods: {
@@ -397,6 +398,10 @@
         this.currentChild = this.getUrlParam("type2");
         var title =  this.getUrlParam("title");
         console.log(this.currentChild, this.currentParent)
+        if(!isPc){
+          this.pageSize = 6;
+          this.small = true;
+        }
         //没选父类的话，展示所有类别
         if (!this.currentParent) {
           // this.currentParent = this.menuList[0].text
