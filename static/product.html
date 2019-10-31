@@ -21,10 +21,10 @@
   <!-- Favicons网站图标 -->
   <link rel="shortcut icon" href="./favicon.ico" />
   <link rel="bookmark" href="./favicon.ico" type="image/x-icon" />
-  <!-- <script src="https://jiejiangs-1253930943.file.myqcloud.com/demo.js"></script> -->
-  <script>
+  <script src="https://jiejiangs-1253930943.file.myqcloud.com/demo.js"></script>
+  <!-- <script>
       document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.file.myqcloud.com/demo.js?random="+Math.random()+"'></s"+"cript>");
- </script>
+ </script> -->
  <!-- 百度竞价 -->
  <script>
     var _hmt = _hmt || [];
@@ -340,9 +340,16 @@
         },
         getDemos: function () {
           this.demos = [];
-          for (let demo of demos) {
+          var that = this;
+          // demos.forEach(function(demo){
+          //   if ((demo.type1.indexOf(that.currentParent)!= -1 || that.currentParent.indexOf(demo.type1) != -1)&& (demo.type2 == that.currentChild || !that.currentChild)) {
+          //     that.demos.push(demo)
+          //   }
+          // });
+          for (var i in demos) {
+            demo = demos[i]
             if ((demo.type1.indexOf(this.currentParent)!= -1 || this.currentParent.indexOf(demo.type1) != -1)&& (demo.type2 == this.currentChild || !this.currentChild)) {
-              this.demos.push(demo)
+              that.demos.push(demo)
             }
           }
           this.currentPage = 1;
@@ -375,19 +382,15 @@
       },
       watch: {
         currentItem: function (n) {
-          
-          console.log(n)
           this.currentTitle = n.title;
         },
         currentParent:function(n){
           history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         },
         currentChild:function(n){
-          console.log(n)
           history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         },
         currentTitle:function(n){
-          console.log(n)
           history.replaceState({},"11","./product.html?type1=广西南宁" + this.currentParent + "&type2=" +  this.currentChild+ "&title=" +  this.currentTitle);
         }
 
@@ -397,7 +400,6 @@
         this.currentParent = this.getUrlParam("type1");
         this.currentChild = this.getUrlParam("type2");
         var title =  this.getUrlParam("title");
-        console.log(this.currentChild, this.currentParent)
         if(!isPc){
           this.pageSize = 6;
           this.small = true;
@@ -405,7 +407,6 @@
         //没选父类的话，展示所有类别
         if (!this.currentParent) {
           // this.currentParent = this.menuList[0].text
-          
           this.currentPage = 1;
           this.showDemos = this.demos.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
         } else {
@@ -414,7 +415,8 @@
         // 存在title , 展示详情页
 
         if(title){
-          for(let demo of demos){
+          for(var i in demos){
+            demo = demos[i]
             if(demo.title == title){
                this.currentItem = demo;
             }

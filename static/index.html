@@ -602,135 +602,15 @@
 
   <!-- 脚本加载 -->
   <script src="js/main.js"></script>
-  <!-- <script src="	https://jiejiangs-1253930943.file.myqcloud.com/demo.js"></script> -->
-  <script>
+  <script src="	https://jiejiangs-1253930943.file.myqcloud.com/demo.js"></script>
+  <!-- <script>
       document.write("<script type='text/javascript' src='https://jiejiangs-1253930943.file.myqcloud.com/demo.js?random="+Math.random()+"'></s"+"cript>");
- </script>
+ </script> -->
 
   <script src="./js/isPC.js"></script>
 
-  <SCRIPT type=text/javascript>  
-      if(isPc && false){
-        kfguin="3292757596";
-        ws="www.jiejiangzs.com/"; 
-        companyname="在线客服"; 
-        welcomeword="高性价比办公，商业空间一站式装修服务商，免费提供设计方案<brT>详询：17774819799/0771--3925356"; 
-        type="1";
-      }
-    
-  </SCRIPT>
-  <script type="text/javascript" src="./js/kf.js"></script>
+  <script src="./js/index.js"></script>
 
-  <script>
-
-    var html = ``;
-    for (let item of arrs) {
-      if (item.text == "办公室装修") {
-        html += `
-              <div class="lf" style="width:14%; padding-left:1%;float:left;height:180px;">
-                  <h3><a style="color:black;" href="product.html?type1=${item.text}">${item.text}</a></h3>
-              `
-      } else {
-        html += `
-              <div class="lf" style="width:14%; padding-left:1%;border-left:1px solid black;float:left;height:180px;">
-                  <h3><a style="color:black;" href="product.html?type1=${item.text}">${item.text}</a></h3>
-              `
-      }
-
-      for (let child of item.children) {
-        html += `<a style="float:left;width:49%;padding:10px 0px;" href="product.html?type1=${item.text}&type2=${child}">${child}</a>`
-      }
-      html += `</div>`
-    }
-
-    $("#itemList").html(html)
-
-
-    var html = `      <div class="nr_top">
-        <b>杰匠装饰 ·
-          <em>公装内容</em>
-        </b>
-      </div>`;
-    for (var i = 0; i < arrs.length; i++) {
-      console.log(arrs[i])
-      if(!isPc && i>2){
-        break;
-      }
-      var float = "fl"
-
-      if (i % 2 != 0) {
-        float = "fr"
-      }
-      html += `
-      <div class="nr01 ${float}">
-        <div class="nr01-top">
-          <strong>${arrs[i].text}</strong>
-        </div>
-        <p>${arrs[i].desc} </p>
-
-        <a href="product.html?type1=${arrs[i].text}" title="查看详情" target="_blank" rel="nofollow">&gt;&gt;查看详情</a>
-       
-        <span>
-          <i>
-            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3292757596&site=qq&menu=yes" title="在线咨询" rel="nofollow">
-              在线咨询
-            </a>
-          </i>
-          <em>咨询热线：
-            <a id="phones2" href="tel:0771-3925356">0771-3925356</a>
-          </em>
-        </span>
-      </div>
-      <div class="nr02 ${float}">
-        <p class="clearfix">`
-      for (var j = 0; j < arrs[i].children.length; j++) {
-        html += `
-          <a  href="product.html?type1=${arrs[i].text}&type2=${arrs[i].children[j]}" target="_blank" title="${arrs[i].children[j]}" rel="nofollow">${arrs[i].children[j]}</a>
-          `
-      }
-      if(isPc){
-        html += `
-          </p>
-          <!-- banner轮播组件 -->
-          <div class="banner">
-            <div id="carousel-example${i}-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
-              <!-- 图片组件 -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <img src="https://jiejiangs-1253930943.file.myqcloud.com/images/${arrs[i].image}" alt="1 slide" style="height:350px">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        `
-      }else{
-        html += `
-          </p>
-          `
-        var type1 = arrs[i].text;
-        var k = 0;
-        for(var demoItem of demos){
-            if(demoItem.type1 == type1){
-              k++;
-              if(k <= 4){              
-                html += `
-                  <a class="mobile_demo_parent" href="./product.html?type1=${demoItem.type1}&type2=${demoItem.type2}&title=${demoItem.title}">
-                    <img class="mobile_demo_img"  src="${demoItem.image}">  
-                    <span class="mobile_demo_span" >${demoItem.title}</span>
-                  </a>
-                `
-              }
-            }
-        }
-      }
-
-    }
-
-    $("#itemList2").html(html)
-
-  
-  </script>
 </body>
 
 </html>

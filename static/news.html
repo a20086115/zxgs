@@ -317,7 +317,6 @@
         if (this.getUrlParam("index") !== "") {
           this.currentItem = this.menuList[parseInt(this.getUrlParam("index"))]
         }
-        console.log(this.currentItem)
         this.menuList = this.menuList.reverse()
         this.showDemos = this.menuList.slice(this.currentPage * this.pageSize - this.pageSize, this.currentPage * this.pageSize)
       },
